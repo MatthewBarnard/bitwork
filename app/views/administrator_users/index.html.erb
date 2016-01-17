@@ -1,0 +1,97 @@
+<section id="main-content">
+  <section class="wrapper">
+    <br />
+    <div class="showback">
+      <h4><i class="fa fa-angle-right"></i> Users</h4>
+      <table id="example" class="table">
+        <thead>
+        <tr>
+          <th>
+            Full Name
+          </th>
+          <th>
+            User Type
+          </th>
+          <th>
+            Adverts
+            <small> claimed/submitted</small>
+          </th>
+          <th>
+            Email Address
+          </th>
+          <th>
+            Active Since
+          </th>
+          <th>
+
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Sammy Smith</td>
+          <td>Job Provider</td>
+          <td>21</td>
+          <td><a href="#">sammy101@gmail.com</a></td>
+          <td>Jun 2015</td>
+          <td><a href="#" class="btn btn-danger"><i class="fa fa-trash" style="padding-right: 5px"></i>Remove User</a>
+          </td>
+        </tr>
+
+        <tr style="background-color: #FFD6D6">
+          <td>Peter Dinklage</td>
+          <td>Job Seeker</td>
+          <td>2</td>
+          <td><a href="#">petepart22@gmail.com</a></td>
+          <td>Jan 2016</td>
+          <td><a href="#" class="btn btn-success"><i class="fa fa-check" style="padding-right: 5px"></i>Re-Activate User</a>
+          </td>
+        </tr>
+        <tr>
+          <td>John Siker</td>
+          <td>Job Seeker</td>
+          <td>0</td>
+          <td><a href="#">johnnyhon@gmail.com</a></td>
+          <td>Jan 2016</td>
+          <td><a href="#" class="btn btn-danger"><i class="fa fa-trash" style="padding-right: 5px"></i>Remove User</a>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Noles Petes</td>
+          <td>Job Seeker</td>
+          <td>0</td>
+          <td><a href="#">pitiiii@gmail.com</a></td>
+          <td>Jan 2016</td>
+          <td><a href="#" class="btn btn-danger"><i class="fa fa-trash" style="padding-right: 5px"></i>Remove User</a>
+          </td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+  </section>
+</section>
+<script>
+  $(document).ready(function () {
+    $('#example').DataTable( {
+      columnDefs: [ {
+        targets: [ 0 ],
+        orderData: [ 0, 1 ]
+      }, {
+        targets: [ 1 ],
+        orderData: [ 1, 0 ]
+      }, {
+        targets: [ 4 ],
+        orderData: [ 4, 0 ]
+      } ]
+    } );
+  })
+
+  $("#adverts_menu_item").removeClass('active')
+  $("#payments_menu_item").removeClass('active')
+  $("#comments_menu_item").removeClass('active')
+  $("#users_menu_item").addClass('active')
+  $("#dashboard_menu_item").removeClass('active')
+</script>
