@@ -1,0 +1,2 @@
+module AdministratorAdvertsHelper
+end

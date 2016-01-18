@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :frontend
   resources :administrator_dashboard
   resources :administrator_users
+  resources :administrator_adverts
 
   controller :frontend do
     # REGISTER
@@ -22,6 +23,10 @@ Rails.application.routes.draw do
 
   controller :administrator_users do
     get '/administrator/users' => :index
+  end
+
+  controller :administrator_adverts do
+    get '/administrator/adverts' => :index
   end
 
 
