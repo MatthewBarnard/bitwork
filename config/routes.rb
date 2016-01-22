@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :administrator_users
   resources :administrator_adverts
   resources :administrator_affiliate_marketing
+  resources :administrator_comments
 
   controller :frontend do
     # REGISTER
@@ -31,6 +32,10 @@ Rails.application.routes.draw do
   end
   controller :administrator_affiliate_marketing do
     get '/administrator/affiliate_marketing' => :index
+  end
+
+  controller :administrator_comments do
+    get '/administrator/comments' => :index
   end
 
 

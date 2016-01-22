@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d4b1780-6d0d-4bc7-ab69-a9f1745cdad2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/administrator_affiliate_marketing/index.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/administrator_comments/index.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/administrator_adverts/index.html.erb" afterPath="$PROJECT_DIR$/app/views/administrator_adverts/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/administrator_dashboard/index.html.erb" afterPath="$PROJECT_DIR$/app/views/administrator_dashboard/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/administrator_users/index.html.erb" afterPath="$PROJECT_DIR$/app/views/administrator_users/index.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/backend_administrator.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/backend_administrator.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
     </list>
@@ -27,7 +24,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/bitwork@Development__bitwork.coverage" NAME="Development: bitwork Coverage Results" MODIFIED="1453142198977" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="bitwork" />
+    <SUITE FILE_PATH="coverage/bitwork@Development__bitwork.coverage" NAME="Development: bitwork Coverage Results" MODIFIED="1453485602659" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="bitwork" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -41,27 +38,58 @@
       <file leaf-file-name="backend_administrator.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/backend_administrator.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.961538">
-              <caret line="104" column="29" selection-start-line="104" selection-start-column="29" selection-end-line="104" selection-end-column="29" />
+            <state vertical-scroll-proportion="-5.4615383">
+              <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
               <folding>
-                <marker date="1453147244735" expanded="true" signature="6662:6675" placeholder="..." />
+                <marker date="1453488020825" expanded="true" signature="6673:6686" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/administrator_affiliate_marketing/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5648464">
-              <caret line="95" column="82" selection-start-line="95" selection-start-column="82" selection-end-line="95" selection-end-column="82" />
+            <state vertical-scroll-proportion="-3.7307692">
+              <caret line="81" column="34" selection-start-line="81" selection-start-column="34" selection-end-line="81" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/administrator_comments/index.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.71276593">
+              <caret line="66" column="14" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="14" />
               <folding>
-                <element signature="n#style#0;n#i#0;n#a#1;n#div#0;n#div#0;n#section#0;n#section#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#section#0;n#section#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i#0;n#a#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#section#0;n#section#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#section#0;n#section#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i#0;n#a#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#section#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#a#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#a#1;n#div#1;n#div#0;n#div#0;n#div#0;n#section#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#a#0;n#div#1;n#div#1;n#div#0;n#div#0;n#section#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#a#1;n#div#1;n#div#1;n#div#0;n#div#0;n#section#0;n#section#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="administrator_comments_controller.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/administrator_comments_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/administrator_adverts/index.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.6153846">
+              <caret line="95" column="8" selection-start-line="0" selection-start-column="0" selection-end-line="101" selection-end-column="9" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -79,7 +107,7 @@
       <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/administrator_users/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.692307">
+            <state vertical-scroll-proportion="0.0">
               <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
               <folding />
             </state>
@@ -100,7 +128,7 @@
         <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="43" />
+              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -128,10 +156,12 @@
         <option value="$PROJECT_DIR$/app/views/administrator_adverts/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/administrator_dashboard/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/administrator_users/index.html.erb" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/backend_administrator.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/administrator_affiliate_marketing_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/administrator_affiliate_marketing/index.html.erb" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/backend_administrator.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/administrator_comments_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/administrator_comments/index.html.erb" />
       </list>
     </option>
   </component>
@@ -150,8 +180,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -178,6 +208,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -312,6 +344,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="administrator_comments" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bitwork" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bitwork" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="administrator_affiliate_marketing" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -413,8 +467,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="RailsProjectView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -593,25 +645,25 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18230277" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18532526" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3256059" sideWeight="0.5042644" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32496077" sideWeight="0.51059" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982087" sideWeight="0.4978678" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3256059" sideWeight="0.49573562" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32496077" sideWeight="0.48940998" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39936775" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30612245" sideWeight="0.4969743" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982087" sideWeight="0.4978678" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -631,22 +683,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/administrator_dashboard/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="29" selection-start-line="1" selection-start-column="1" selection-end-line="2" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/administrator_users_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/administrator_users/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -659,7 +695,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="22" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -682,7 +717,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -690,7 +724,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="40" column="47" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -755,7 +788,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -835,7 +867,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -850,7 +881,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -869,7 +899,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -877,7 +906,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -906,7 +934,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -914,7 +941,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -922,7 +948,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.032945737">
           <caret line="95" column="4" selection-start-line="95" selection-start-column="4" selection-end-line="95" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -930,7 +955,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="22" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -938,7 +962,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -954,7 +977,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -963,20 +985,6 @@
         <state vertical-scroll-proportion="-10.384615">
           <caret line="1101" column="6" selection-start-line="1101" selection-start-column="6" selection-end-line="1101" selection-end-column="21" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/administrator_adverts/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.5">
-          <caret line="97" column="25" selection-start-line="97" selection-start-column="25" selection-end-line="97" selection-end-column="25" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#a#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#h3#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#section#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -990,27 +998,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/administrator_users/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.692307">
+        <state vertical-scroll-proportion="0.0">
           <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/backend_administrator.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.961538">
-          <caret line="104" column="29" selection-start-line="104" selection-start-column="29" selection-end-line="104" selection-end-column="29" />
-          <folding>
-            <marker date="1453147244735" expanded="true" signature="6662:6675" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1024,14 +1014,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/administrator_affiliate_marketing/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5648464">
-          <caret line="95" column="82" selection-start-line="95" selection-start-column="82" selection-end-line="95" selection-end-column="82" />
+        <state vertical-scroll-proportion="-3.7307692">
+          <caret line="81" column="34" selection-start-line="81" selection-start-column="34" selection-end-line="81" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/administrator_adverts/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.6153846">
+          <caret line="95" column="8" selection-start-line="0" selection-start-column="0" selection-end-line="101" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/backend_administrator.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.4615383">
+          <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#i#0;n#a#1;n#div#0;n#div#0;n#section#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#section#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#a#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#section#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#section#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#a#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#section#0;n#section#0;n#!!top" expanded="true" />
+            <marker date="1453488020825" expanded="true" signature="6673:6686" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/administrator_comments_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/administrator_comments/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.71276593">
+          <caret line="66" column="14" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="14" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#a#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#a#1;n#div#1;n#div#0;n#div#0;n#div#0;n#section#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#a#0;n#div#1;n#div#1;n#div#0;n#div#0;n#section#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#a#1;n#div#1;n#div#1;n#div#0;n#div#0;n#section#0;n#section#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
