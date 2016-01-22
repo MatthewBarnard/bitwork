@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :provider_profile
   resources :provider_adverts
+  resources :provider_bids
 
   controller :frontend do
     # REGISTER
@@ -52,5 +53,8 @@ Rails.application.routes.draw do
     get '/provider/adverts' => :index
   end
 
+  controller :provider_bids do
+    get '/provider/bids' => :index
+  end
 
 end
