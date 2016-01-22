@@ -1,0 +1,2 @@
+module SeekerProfileHelper
+end

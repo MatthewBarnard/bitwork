@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   resources :provider_bids
   resources :provider_payments
 
+  resources :seeker_profile
+
   controller :frontend do
     # REGISTER
     get '/register/seeker' => :register_job_seeker
@@ -24,6 +26,8 @@ Rails.application.routes.draw do
     patch '/register/provider' => :save_register_job_provider
 
   end
+
+  # ADMINISTRATOR BACKEND
 
   controller :administrator_dashboard do
     get '/administrator/dashboard' => :index
@@ -36,6 +40,7 @@ Rails.application.routes.draw do
   controller :administrator_adverts do
     get '/administrator/adverts' => :index
   end
+
   controller :administrator_affiliate_marketing do
     get '/administrator/affiliate_marketing' => :index
   end
@@ -62,4 +67,9 @@ Rails.application.routes.draw do
     get '/provider/payments' => :index
   end
 
+  # JOB SEEKER BACKEND
+
+  controller :seeker_profile do
+    get '/seeker/profile' => :index
+  end
 end
