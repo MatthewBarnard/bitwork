@@ -1,0 +1,94 @@
+<section id="main-content">
+  <section class="wrapper">
+    <br />
+    <div class="showback">
+      <h4><i class="fa fa-angle-right"></i> Adverts</h4>
+      <table id="example" class="table">
+        <thead>
+        <tr>
+          <th>
+            Ad #
+          </th>
+          <th>
+            Title
+          </th>
+          <th>
+            Description
+          </th>
+          <th>
+            Status
+          </th>
+          <th>
+            Claimed By
+          </th>
+          <th>
+
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>53256</td>
+          <td>Cool new waiters needed</td>
+          <td>We are looking for new waiters in our rest...</td>
+          <td><a href="#" style="color: green">Active</a></td>
+          <td>N/A</td>
+          <td>
+            <a href="#" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+            <a href="#" class="btn btn-primary"><i class="fa fa-eye"></i></a>
+            <a href="#" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+          </td>
+        </tr>
+
+        <tr>
+          <td>53321</td>
+          <td>Lawn mowing services needed</td>
+          <td>A large yard is in need to be cleaned! we need...</td>
+          <td><a href="#" style="color: red">Expired</a></td>
+          <td><a href="#">John Newall</a></td>
+          <td>
+           <p>Claimed: R 450.00</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td>53288</td>
+          <td>Fun Software Testing Job</td>
+          <td>Students are needed for a fun day at a software deve...</td>
+          <td><a href="#" style="color: red">Expired</a></td>
+          <td><a href="#">Sipho Nele <br /> Sedge Noells <br /> Peter Partrage <br /></a></td>
+          <td>
+            <p>Claimed: R 900.00 <small>each</small></p>
+          </td>
+        </tr>
+
+
+
+
+        </tbody>
+      </table>
+    </div>
+
+  </section>
+</section>
+<script>
+  $(document).ready(function () {
+    $('#example').DataTable( {
+      columnDefs: [ {
+        targets: [ 0 ],
+        orderData: [ 0, 1 ]
+      }, {
+        targets: [ 1 ],
+        orderData: [ 1, 0 ]
+      }, {
+        targets: [ 4 ],
+        orderData: [ 4, 0 ]
+      } ]
+    } );
+  })
+
+  $("#profile_menu_item").removeClass('active')
+  $("#posted_adverts_menu_item").addClass('active')
+  $("#bids_menu_item").removeClass('active')
+  $("#payments_menu_item").removeClass('active')
+</script>

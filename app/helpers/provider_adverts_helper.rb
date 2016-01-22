@@ -1,0 +1,2 @@
+module ProviderAdvertsHelper
+end
