@@ -2,11 +2,14 @@ Rails.application.routes.draw do
   root 'frontend#index'
 
   resources :frontend
+
   resources :administrator_dashboard
   resources :administrator_users
   resources :administrator_adverts
   resources :administrator_affiliate_marketing
   resources :administrator_comments
+
+  resources :provider_profile
 
   controller :frontend do
     # REGISTER
@@ -36,6 +39,10 @@ Rails.application.routes.draw do
 
   controller :administrator_comments do
     get '/administrator/comments' => :index
+  end
+
+  controller :provider_profile do
+    get '/provider/profile' => :index
   end
 
 
