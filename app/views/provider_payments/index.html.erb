@@ -1,0 +1,131 @@
+<style>
+  .outstanding_panel {
+    background-color: white;
+    color: #3B3B3B;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+    box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+    height: 100px;
+  }
+
+  .btn-danger {
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(255, 50, 50, 0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(255, 50, 50, 0.75);
+    box-shadow: 0px 0px 5px 0px rgba(255, 50, 50, 0.75);
+  }
+
+  .btn-success {
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 255, 0, 0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 255, 0, 0.75);
+    box-shadow: 0px 0px 5px 0px rgba(0, 255, 0, 0.75);
+  }
+</style>
+
+
+<section id="main-content">
+  <section class="wrapper">
+    <br/>
+
+    <div class="row">
+      <div class="col-md-4 text-center outstanding_panel">
+        <h1 style="margin: 0px">R 3 150.00</h1><br/>
+
+        <h1 style="margin: 0px">
+          <small>(Immediately Due)</small>
+        </h1>
+      </div>
+      <div class="col-md-4 text-center outstanding_panel btn-success">
+        <h1 style="margin: 0px">R 760.00</h1><br/>
+
+        <h1 style="margin: 0px">
+          <small>(Savings)</small>
+        </h1>
+      </div>
+      <div class="col-md-4 text-center outstanding_panel btn-danger">
+        <h1 style="margin: 0px">R 0.00</h1><br/>
+
+        <h1 style="margin: 0px">
+          <small>(OVERDUE)</small>
+        </h1>
+      </div>
+    </div>
+    <br/>
+
+
+    <table id="example" class="table">
+      <thead>
+      <tr>
+        <th>
+          Ad #
+        </th>
+        <th>
+          Title
+        </th>
+        <th>
+          Description
+        </th>
+        <th>
+          Claimed By
+        </th>
+        <th>
+          Amount
+        </th>
+        <th>
+          Total
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+
+      <tr>
+        <td>53321</td>
+        <td>Lawn mowing services needed</td>
+        <td>A large yard is in need to be cleaned! we need...</td>
+        <td><a href="#">John Newall</a></td>
+        <td>
+          <p>Claimed: R 450.00</p>
+        </td>
+        <td>R 450.00</td>
+      </tr>
+
+      <tr>
+        <td>53288</td>
+        <td>Fun Software Testing Job</td>
+        <td>Students are needed for a fun day at a software deve...</td>
+        <td><a href="#">Sipho Nele <br/> Sedge Noells <br/> Peter Partrage <br/></a></td>
+        <td>
+          <p>Claimed: R 900.00
+            <small>each</small>
+          </p>
+        </td>
+        <td>R 2 700.00</td>
+      </tr>
+
+
+      </tbody>
+    </table>
+
+
+  </section>
+</section>
+<script>
+  $(document).ready(function () {
+    $('#example').DataTable({
+      columnDefs: [{
+        targets: [0],
+        orderData: [0, 1]
+      }, {
+        targets: [1],
+        orderData: [1, 0]
+      }, {
+        targets: [4],
+        orderData: [4, 0]
+      }]
+    });
+  })
+
+  $("#profile_menu_item").removeClass('active')
+  $("#posted_adverts_menu_item").removeClass('active')
+  $("#bids_menu_item").removeClass('active')
+  $("#payments_menu_item").addClass('active')
+</script>

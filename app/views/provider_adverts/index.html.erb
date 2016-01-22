@@ -1,6 +1,12 @@
 <section id="main-content">
   <section class="wrapper">
-    <br />
+    <br/>
+
+    <div class="col-md-12 text-right">
+      <a href="#" class="btn btn-primary"><i class="fa fa-plus" style="padding-right: 5px"></i>Create Advert</a>
+    </div>
+    <br/><br/>
+
     <div class="showback">
       <h4><i class="fa fa-angle-right"></i> Adverts</h4>
       <table id="example" class="table">
@@ -47,7 +53,7 @@
           <td><a href="#" style="color: red">Expired</a></td>
           <td><a href="#">John Newall</a></td>
           <td>
-           <p>Claimed: R 450.00</p>
+            <p>Claimed: R 450.00</p>
           </td>
         </tr>
 
@@ -56,13 +62,13 @@
           <td>Fun Software Testing Job</td>
           <td>Students are needed for a fun day at a software deve...</td>
           <td><a href="#" style="color: red">Expired</a></td>
-          <td><a href="#">Sipho Nele <br /> Sedge Noells <br /> Peter Partrage <br /></a></td>
+          <td><a href="#">Sipho Nele <br/> Sedge Noells <br/> Peter Partrage <br/></a></td>
           <td>
-            <p>Claimed: R 900.00 <small>each</small></p>
+            <p>Claimed: R 900.00
+              <small>ea</small>
+            </p>
           </td>
         </tr>
-
-
 
 
         </tbody>
@@ -73,18 +79,18 @@
 </section>
 <script>
   $(document).ready(function () {
-    $('#example').DataTable( {
-      columnDefs: [ {
-        targets: [ 0 ],
-        orderData: [ 0, 1 ]
+    $('#example').DataTable({
+      columnDefs: [{
+        targets: [0],
+        orderData: [0, 1]
       }, {
-        targets: [ 1 ],
-        orderData: [ 1, 0 ]
+        targets: [1],
+        orderData: [1, 0]
       }, {
-        targets: [ 4 ],
-        orderData: [ 4, 0 ]
-      } ]
-    } );
+        targets: [4],
+        orderData: [4, 0]
+      }]
+    });
   })
 
   $("#profile_menu_item").removeClass('active')
