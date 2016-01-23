@@ -1,0 +1,78 @@
+<section id="main-content">
+  <section class="wrapper">
+    <div class="showback">
+      <h4><i class="fa fa-angle-right"></i> Jobs</h4>
+      <br/>
+
+
+      <table id="example" class="table">
+        <thead>
+        <tr>
+          <th>
+            Ad #
+          </th>
+          <th>
+            Title
+          </th>
+          <th>
+            Description
+          </th>
+          <th>
+            Amount
+          </th>
+          <th>
+            Status
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr>
+          <td>53321</td>
+          <td>Lawn mowing services needed</td>
+          <td>A large yard is in need to be cleaned! we need...</td>
+          <td>
+            <p>Claimed: R 450.00</p>
+          </td>
+          <td><p style="color:green">COMPLETED</p></td>
+        </tr>
+
+        <tr>
+          <td>53288</td>
+          <td>Fun Software Testing Job</td>
+          <td>Students are needed for a fun day at a software deve...</td>
+          <td>
+            <p>Claimed: R 900.00
+            </p>
+          </td>
+          <td><p style="color:green">COMPLETED</p></td>
+        </tr>
+
+
+        </tbody>
+      </table>
+    </div>
+
+
+  </section>
+</section>
+<script>
+  $(document).ready(function () {
+    $('#example').DataTable({
+      columnDefs: [{
+        targets: [0],
+        orderData: [0, 1]
+      }, {
+        targets: [1],
+        orderData: [1, 0]
+      }, {
+        targets: [4],
+        orderData: [4, 0]
+      }]
+    });
+  })
+
+  $("#profile_menu_item").removeClass('active')
+  $("#jobs_menu_item").addClass('active')
+  $("#payments_menu_item").removeClass('active')
+</script>

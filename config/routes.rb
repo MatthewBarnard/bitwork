@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   resources :provider_payments
 
   resources :seeker_profile
+  resources :seeker_jobs
+  resources :seeker_payments
 
   controller :frontend do
     # REGISTER
@@ -71,5 +73,13 @@ Rails.application.routes.draw do
 
   controller :seeker_profile do
     get '/seeker/profile' => :index
+  end
+
+  controller :seeker_jobs do
+    get '/seeker/jobs' => :index
+  end
+
+  controller :seeker_payments do
+    get '/seeker/payments' => :index
   end
 end
