@@ -29,89 +29,74 @@
 
 <div class="container">
   <div class="row">
-    <form role="form">
-      <div class="col-lg-6">
-        <div class="well well-sm"><strong><span class="glyphicon glyphicon-asterisk"></span>Required Field</strong>
-        </div>
-        <div class="form-group">
-          <label for="InputName">Full Name</label>
-
-          <div class="input-group">
-            <input type="text" class="form-control" name="InputName" id="InputName" placeholder="Enter Name" required>
-            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="InputEmail">Cellphone</label>
-
-          <div class="input-group">
-            <input type="email" class="form-control" id="InputEmailFirst" name="InputEmail" placeholder="Enter Email" required>
-            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="InputEmail">Email</label>
-
-          <div class="input-group">
-            <input type="email" class="form-control" id="InputEmailSecond" name="InputEmail" placeholder="Confirm Email" required>
-            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="InputEmail">Heme</label>
-
-          <div class="input-group">
-            <input type="email" class="form-control" id="InputEmailSecond" name="InputEmail" placeholder="Confirm Email" required>
-            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-          </div>
-        </div>
-
-
-        <div class="form-group">
-          <label for="InputMessage">Enter Message</label>
-
-          <div class="input-group">
-            <textarea id="input_address" class="form-control" rows="2" required disabled></textarea>
-            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-          </div>
-        </div>
-
-
-        <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-info pull-right">
+    <div class="col-lg-6">
+      <div class="well well-sm"><strong><span class="glyphicon glyphicon-asterisk"></span>Required Field</strong>
       </div>
-      <!--<div class="col-md-6">-->
+      <%= form_for @user, url: {action: 'save_register_job_provider'}, :html => {id: 'required_form'} do |f| %>
+          <div class="form-group">
+            <label for="InputName">Full Name</label>
 
+            <div class="input-group">
+              <%= f.text_field :full_name, type: 'text', class: 'form-control', placeholder: 'Enter Full Name', required: 'true', validation_message: 'Please enter your full name' %>
+              <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+            </div>
+          </div>
 
-        <!--<div class="form-group">-->
-          <!--<label for="InputMessage">Enter Message</label>-->
+          <div class="form-group">
+            <label for="InputEmail">Cellphone</label>
 
-          <!--<div class="input-group">-->
-            <!--<textarea id="input_address" class="form-control" rows="2" required disabled></textarea>-->
-            <!--<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>-->
-          <!--</div>-->
-        <!--</div>-->
+            <div class="input-group">
+              <%= f.text_field :cellphone, type: 'text', class: 'form-control', placeholder: 'Enter Cellphone', required: 'true', validation_message: 'Please enter your cellphone number' %>
+              <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+            </div>
+          </div>
 
+          <div class="form-group">
+            <label for="InputEmail">Email</label>
+            <div class="input-group">
+              <%= f.text_field :email, type: 'email', class: 'form-control', placeholder: 'Enter Email', required: 'true', validation_message: 'Please enter your email address' %>
+              <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+            </div>
+          </div>
 
-      <!--</div>-->
+          <div class="form-group">
+            <label for="InputEmail">Password</label>
+            <div class="input-group">
+              <%= f.text_field :password, type: 'password', class: 'form-control', required: 'true', validation_message: 'Please enter your password' %>
+              <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+            </div>
+          </div>
 
+          <div class="form-group">
+            <label for="InputMessage">Address</label>
 
-    </form>
-
-
-    <div class="col-lg-5 col-md-push-1">
-      <div class="col-md-12">
-        <div class="alert alert-success">
-          <strong><span class="glyphicon glyphicon-ok"></span> Success! Registered Successfully.</strong>
-        </div>
-        <div class="alert alert-danger">
-          <span class="glyphicon glyphicon-remove"></span><strong> Error! Please ensure that all fields are filled in correctly.</strong>
-        </div>
-      </div>
+            <div class="input-group">
+              <%= f.text_area :address, id: 'input_address', type: 'text', class: 'form-control', placeholder: 'Enter Email', required: 'true', readonly: 'true', validation_message: 'Your address is not allowed to be blank' %>
+              <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+            </div>
+          </div>
+          <button id="submit_button" class="btn btn-info pull-right">Submit</button>
+      <% end %>
     </div>
   </div>
 </div>
 
+<!--MODALS-->
+<div id="validation_modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
 
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 id="validation_message" class="modal-title">Error Message</h4>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!--GEOLOCATION-->
 <script>
   function initMap() {
     if (navigator.geolocation) {
@@ -145,4 +130,9 @@
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWnfB5FhaO8KZ3lyzUicJrrZrJr69g0fI&signed_in=true&callback=initMap"
         async defer>
+</script>
+
+<!--PAGE SCRIPT-->
+<script>
+  registration.validation();
 </script>
