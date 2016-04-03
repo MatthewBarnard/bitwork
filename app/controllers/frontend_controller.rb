@@ -12,7 +12,7 @@ class FrontendController < ApplicationController
   end
 
   def register_job_seeker
-
+    @user = User.new
   end
 
   def save_register_job_provider
@@ -24,14 +24,72 @@ class FrontendController < ApplicationController
 
     verified_login = User.login(user.email, user.password)
     session[:user_id] = !verified_login ? nil : verified_login
+    session[:recent_login] = true
+
 
     redirect_to action: 'index'
   end
 
   def save_register_job_seeker
+    user = User.new(user_params)
+    user.user_type = 3
+    if (user.valid?)
+      user.save
+    end
 
+    verified_login = User.login(user.email, user.password)
+    if !verified_login
+      session[:user_id] = nil
+      session[:recent_login] = nil
+      session[:account_link] = nil
+    else
+      session[:user_id] = verified_login
+      session[:recent_login] = true
+      if User.find(verified_login).user_type == 2
+        session[:account_link] = 'provider/profile'
+      else
+        session[:account_link] = 'seeker/profile'
+      end
+    end
+
+    redirect_to action: 'index'
   end
+
+  def profile
+    if User.find(session[:user_id]).user_type == 2
+      redirect_to :layout => "job_provider", :controller => 'provider_profile', :action => 'index'
+    else
+      redirect_to :layout => "job_provider", :controller => 'provider_profile', :action => 'index'
+    end
+    # session[:rerender_layout] = true
+  end
+
+  def login
+    verified_login = User.login(params[:login][:email], params[:login][:password])
+    if !verified_login
+      session[:user_id] = nil
+      session[:recent_login] = nil
+      session[:account_link] = nil
+    else
+      session[:user_id] = verified_login
+      session[:recent_login] = true
+      if User.find(verified_login).user_type == 2
+        session[:account_link] = 'provider/profile'
+      else
+        session[:account_link] = 'seeker/profile'
+      end
+    end
+
+    redirect_to action: 'index'
+  end
+
+  def logout
+    session[:user_id] = nil
+    redirect_to action: 'index'
+  end
+
   def user_params
     params.require(:user).permit(:full_name,:cellphone,:email,:password,:address)
   end
+
 end

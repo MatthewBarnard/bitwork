@@ -4,9 +4,9 @@
 
     <div class="row">
       <div class="col-md-6 text-left">
-        <h1>Jack Sampson</h1>
-        <p>072 575 4540</p>
-        <p>Verydenhof Holdings, Bloemfontein, 9301, South Africa </p>
+        <h1><%= @user.full_name %></h1>
+        <p><%= @user.cellphone %></p>
+        <p><%= @user.address %></p>
       </div>
       <div class="col-md-6 text-right">
         <h1><img src="/assets/provider_green_horn.png" /></h1>
@@ -25,7 +25,7 @@
           <p><img src="https://cdn2.iconfinder.com/data/icons/bold-outline-mix/128/valentines_day-57-64.png"></p>
           <div class="row">
            <div class="col-md-12 text-center">
-             <h1>4</h1>
+             <h1><%= @user.jobs.blank? ? '0' : @user.jobs %></h1>
            </div>
           </div>
         </div>
@@ -41,7 +41,7 @@
           <p><img src="https://cdn2.iconfinder.com/data/icons/bold-outline-mix/128/inspiration-37-2-64.png"></p>
           <div class="row">
             <div class="col-md-12 text-center">
-              <h1>R 1560.00</h1>
+              <h1><%= number_to_currency(@user.money.blank? ? 0 : @user.money, unit: 'R', separator: ',', delimiter: ' ') %></h1>
             </div>
           </div>
         </div>

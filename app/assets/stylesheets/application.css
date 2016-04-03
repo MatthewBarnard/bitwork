@@ -35,3 +35,16 @@
 #loader_text i {
     font-size: 30px;
 }
+
+.recent_login {
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(255,255,255,1);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(255,255,255,1);
+    box-shadow: 0px 0px 5px 0px rgba(255,255,255,1);
+
+    width: 150px;
+    height: 100px;
+    background-color: white;
+    position:fixed;
+    top:100px;
+    right:10px;
+}

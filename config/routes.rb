@@ -27,6 +27,13 @@ Rails.application.routes.draw do
     post '/register/provider' => :save_register_job_provider
     patch '/register/provider' => :save_register_job_provider
 
+
+    # GENERAL
+    # get '/profile' => :profile
+    post '/login' => :login
+    patch '/login' => :login
+    get '/logout' => :logout
+
   end
 
   # ADMINISTRATOR BACKEND

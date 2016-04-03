@@ -1,0 +1,138 @@
+<div class="row" style="margin-top: 50px;">
+  <div class="col-md-12 text-center">
+    <img src="/assets/logo.png"/>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4 col-xs-6 text-center panel panel-default">
+    <div class="panel-body">
+      <img src="https://cdn1.iconfinder.com/data/icons/line-mix-vol-3/128/-53-64.png"/> <br/>
+
+      <h3>Submit Jobs</h3>
+    </div>
+  </div>
+  <div class="col-md-4 col-xs-6 text-center panel panel-default">
+    <div class="panel-body">
+      <img src="https://cdn1.iconfinder.com/data/icons/line-mix-vol-3/128/-53-64.png"/> <br/>
+
+      <h3>Real-time tracking of adverts</h3>
+    </div>
+  </div>
+  <div class="col-md-4 col-xs-12 text-center panel panel-default">
+    <div class="panel-body">
+      <img src="https://cdn1.iconfinder.com/data/icons/line-mix-vol-3/128/-53-64.png"/> <br/>
+
+      <h3>Active approval and rating system</h3>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="well well-sm"><strong><span class="glyphicon glyphicon-asterisk"></span>Required Field</strong>
+      </div>
+      <%= form_for @user, url: {action: 'save_register_job_seeker'}, :html => {id: 'required_form'} do |f| %>
+          <div class="form-group">
+            <label for="InputName">Full Name</label>
+
+            <div class="input-group">
+              <%= f.text_field :full_name, type: 'text', class: 'form-control', placeholder: 'Enter Full Name', required: 'true', validation_message: 'Please enter your full name' %>
+              <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="InputEmail">Cellphone</label>
+
+            <div class="input-group">
+              <%= f.text_field :cellphone, type: 'text', class: 'form-control', placeholder: 'Enter Cellphone', required: 'true', validation_message: 'Please enter your cellphone number' %>
+              <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="InputEmail">Email</label>
+            <div class="input-group">
+              <%= f.text_field :email, type: 'email', class: 'form-control', placeholder: 'Enter Email', required: 'true', validation_message: 'Please enter your email address' %>
+              <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="InputEmail">Password</label>
+            <div class="input-group">
+              <%= f.text_field :password, type: 'password', class: 'form-control', required: 'true', validation_message: 'Please enter your password' %>
+              <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="InputMessage">Address</label>
+
+            <div class="input-group">
+              <%= f.text_area :address, id: 'input_address', type: 'text', class: 'form-control', placeholder: 'Enter Email', required: 'true', readonly: 'true', validation_message: 'Your address is not allowed to be blank' %>
+              <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+            </div>
+          </div>
+          <button id="submit_button" class="btn btn-info pull-right">Submit</button>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<!--MODALS-->
+<div id="validation_modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 id="validation_message" class="modal-title">Error Message</h4>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!--GEOLOCATION-->
+<script>
+  function initMap() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function (position) {
+        codeLatLng(position.coords.latitude, position.coords.longitude)
+      }, function () {
+
+      });
+    } else {
+
+    }
+  }
+
+  function codeLatLng(lat, lng) {
+    var geocoder = new google.maps.Geocoder();
+    var latlng = new google.maps.LatLng(lat, lng);
+    geocoder.geocode({
+      'latLng': latlng
+    }, function (results, status) {
+      if (status === google.maps.GeocoderStatus.OK) {
+        if (results[1]) {
+          $('#input_address').val(results[1].formatted_address)
+        } else {
+          alert('No results found');
+        }
+      } else {
+        alert('Geocoder failed due to: ' + status);
+      }
+    });
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWnfB5FhaO8KZ3lyzUicJrrZrJr69g0fI&signed_in=true&callback=initMap"
+        async defer>
+</script>
+
+<!--PAGE SCRIPT-->
+<script>
+  registration.validation();
+</script>
