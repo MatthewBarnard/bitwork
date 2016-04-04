@@ -66,6 +66,10 @@ Rails.application.routes.draw do
 
   controller :provider_adverts do
     get '/provider/adverts' => :index
+    get '/provider/adverts/new' => :new
+
+    post '/provider/adverts/new' => :save
+    patch '/provider/adverts/new' => :save
   end
 
   controller :provider_bids do

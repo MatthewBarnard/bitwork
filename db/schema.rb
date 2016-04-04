@@ -11,10 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160403124127) do
+ActiveRecord::Schema.define(version: 20160404183240) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "adverts", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "title"
+    t.float    "payment"
+    t.text     "description"
+    t.text     "location"
+    t.boolean  "is_active"
+    t.boolean  "is_claimed"
+    t.integer  "user_claimed_id"
+    t.float    "user_claimed_amount"
+    t.datetime "date_expiry"
+    t.datetime "date_required"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.integer  "user_type"
@@ -30,4 +46,6 @@ ActiveRecord::Schema.define(version: 20160403124127) do
     t.float    "money"
   end
 
+  add_foreign_key "adverts", "users"
+  add_foreign_key "adverts", "users", column: "user_claimed_id"
 end
