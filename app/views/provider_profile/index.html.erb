@@ -56,7 +56,7 @@
           <p><img src="https://cdn2.iconfinder.com/data/icons/bold-outline-mix/128/inspiration-32-64.png"></p>
           <div class="row">
             <div class="col-md-12 text-center">
-              <h1>2</h1>
+              <h1><%= Advert.where(user_id: session[:user_id], is_active: true, is_claimed: nil).count %></h1>
             </div>
           </div>
         </div>

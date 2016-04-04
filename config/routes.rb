@@ -67,6 +67,10 @@ Rails.application.routes.draw do
   controller :provider_adverts do
     get '/provider/adverts' => :index
     get '/provider/adverts/new' => :new
+    get '/provider/adverts/:id/edit' => :new
+    get '/provider/adverts/:id/view' => :view
+    get '/provider/adverts/:id/disable' => :disable
+    get '/provider/adverts/:id/enable' => :enable
 
     post '/provider/adverts/new' => :save
     patch '/provider/adverts/new' => :save

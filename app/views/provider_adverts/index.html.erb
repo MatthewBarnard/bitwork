@@ -3,7 +3,8 @@
     <br/>
 
     <div class="col-md-12 text-right">
-      <a href="/provider/adverts/new" class="btn btn-primary"><i class="fa fa-plus" style="padding-right: 5px"></i>Create Advert</a>
+      <a href="/provider/adverts/new" class="btn btn-primary"><i class="fa fa-plus" style="padding-right: 5px"></i>Create
+        Advert</a>
     </div>
     <br/><br/>
 
@@ -13,18 +14,15 @@
         <thead>
         <tr>
           <th>
-            Ad #
-          </th>
-          <th>
             Title
           </th>
           <th>
             Description
           </th>
-          <th>
+          <th class="text-center">
             Status
           </th>
-          <th>
+          <th class="text-center">
             Claimed By
           </th>
           <th>
@@ -33,44 +31,27 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <td>53256</td>
-          <td>Cool new waiters needed</td>
-          <td>We are looking for new waiters in our rest...</td>
-          <td><a href="#" style="color: green">Active</a></td>
-          <td>N/A</td>
-          <td>
-            <a href="#" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
-            <a href="#" class="btn btn-primary"><i class="fa fa-eye"></i></a>
-            <a href="#" class="btn btn-danger"><i class="fa fa-trash"></i></a>
-          </td>
-        </tr>
-
-        <tr>
-          <td>53321</td>
-          <td>Lawn mowing services needed</td>
-          <td>A large yard is in need to be cleaned! we need...</td>
-          <td><a href="#" style="color: red">Expired</a></td>
-          <td><a href="#">John Newall</a></td>
-          <td>
-            <p>Claimed: R 450.00</p>
-          </td>
-        </tr>
-
-        <tr>
-          <td>53288</td>
-          <td>Fun Software Testing Job</td>
-          <td>Students are needed for a fun day at a software deve...</td>
-          <td><a href="#" style="color: red">Expired</a></td>
-          <td><a href="#">Sipho Nele <br/> Sedge Noells <br/> Peter Partrage <br/></a></td>
-          <td>
-            <p>Claimed: R 900.00
-              <small>ea</small>
-            </p>
-          </td>
-        </tr>
-
-
+        <% @adverts.each do |advert| %>
+            <tr>
+              <td><%= advert.title %></td>
+              <td style=" width:500px;white-space:nowrap;overflow:hidden; display:block"><label style=";text-overflow: ellipsis;"><%= advert.description %></label></td>
+              <% if advert.is_active %>
+                  <td class="text-center"><label class="label label-success">Active</label></td>
+              <% else %>
+                  <td class="text-center"><label class="label label-danger">Disabled</label></td>
+              <% end %>
+              <td class="text-center"><%= !advert.user_claimed_id.blank? ? '<a href="#">'.html_safe + User.find(advert.user_claimed_id).full_name + '</a>'.html_safe : 'N/A' %></td>
+              <td>
+                <a href="/provider/adverts/<%= advert.id %>/edit" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+                <a href="/provider/adverts/<%= advert.id %>/view" class="btn btn-primary"><i class="fa fa-eye"></i></a>
+                <% if advert.is_active %>
+                    <a href="/provider/adverts/<%= advert.id %>/disable" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                <% else %>
+                    <a href="/provider/adverts/<%= advert.id %>/enable" class="btn btn-success"><i class="fa fa-check"></i></a>
+                <% end %>
+              </td>
+            </tr>
+        <% end %>
         </tbody>
       </table>
     </div>
