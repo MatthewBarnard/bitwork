@@ -55,13 +55,8 @@ class FrontendController < ApplicationController
     redirect_to action: 'index'
   end
 
-  def profile
-    if User.find(session[:user_id]).user_type == 2
-      redirect_to :layout => "job_provider", :controller => 'provider_profile', :action => 'index'
-    else
-      redirect_to :layout => "job_provider", :controller => 'provider_profile', :action => 'index'
-    end
-    # session[:rerender_layout] = true
+  def about_us
+
   end
 
   def login

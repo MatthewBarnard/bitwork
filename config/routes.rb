@@ -29,10 +29,11 @@ Rails.application.routes.draw do
 
 
     # GENERAL
-    # get '/profile' => :profile
     post '/login' => :login
     patch '/login' => :login
     get '/logout' => :logout
+
+    get '/about_us' => :about_us
 
   end
 
