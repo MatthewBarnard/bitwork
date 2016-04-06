@@ -22,6 +22,11 @@ search.initialize = function () {
         e.preventDefault();
         window.location = $('#search_field').val();
     })
+
+    $(document).on('click', '#results_search_button', function (e) {
+        e.preventDefault();
+        window.location = $('#search').val();
+    })
 }
 
 //GENERAL FUNCTIONS
