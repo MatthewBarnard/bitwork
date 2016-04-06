@@ -59,6 +59,11 @@ class FrontendController < ApplicationController
 
   end
 
+  def search
+    @adverts = Advert.all
+    @search_results = Advert.where("lower(title) LIKE '%#{params[:search].downcase}%'")
+  end
+
   def login
     verified_login = User.login(params[:login][:email], params[:login][:password])
     if !verified_login

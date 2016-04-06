@@ -1,3 +1,115 @@
 // Place all the styles related to the frontend controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.advert-listing{
+  padding:5px;
+  margin-bottom:10px;
+  border: 1px solid #aaa;
+  height:150px;
+}
+
+.container-4{
+  overflow: hidden;
+  width: 100%;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.container-4 input#search{
+  width: 100%;
+  height: 50px;
+  background: #CFCFCF;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: black;
+  font-style: italic;
+  padding-left: 15px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.container-4 input#search::-webkit-input-placeholder {
+  color: #65737e;
+}
+
+.container-4 input#search:-moz-placeholder { /* Firefox 18- */
+  color: #65737e;
+}
+
+.container-4 input#search::-moz-placeholder {  /* Firefox 19+ */
+  color: #65737e;
+}
+
+.container-4 input#search:-ms-input-placeholder {
+  color: #65737e;
+}
+
+.container-4 button.icon{
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+  border: none;
+  background: #232833;
+  height: 50px;
+  width: 50px;
+  color: #4f5b66;
+  opacity: 0;
+  font-size: 10pt;
+
+  -webkit-transition: all .55s ease;
+  -moz-transition: all .55s ease;
+  -ms-transition: all .55s ease;
+  -o-transition: all .55s ease;
+  transition: all .55s ease;
+}
+
+.container-4:hover button.icon, .container-4:active button.icon, .container-4:focus button.icon{
+  outline: none;
+  opacity: 1;
+  margin-left: -50px;
+}
+
+.container-4:hover button.icon:hover{
+  background: white;
+}
+
+.suggested-bar {
+  position: static;
+  height:90vh;
+  top: 10vh;
+  width:300px;
+}
+.suggested-bar div {
+  background-color: white;
+  padding: 5px;
+  margin-top: 5px;
+  cursor:pointer;
+}
+.suggested-bar div h3 {
+  font-size: 15px;
+  margin-top: 0px;
+}
+.suggested-bar div p {
+  font-size: 11px;
+  margin-bottom: 0px;
+}
+.suggested-bar div:hover {
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+.advert_container{
+  position: absolute;
+  top: 179px;
+  left: 299px;
+}
+html, body {
+  overflow-x: hidden;
+}

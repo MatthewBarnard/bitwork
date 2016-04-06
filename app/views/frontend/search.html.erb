@@ -1,0 +1,65 @@
+<div style="margin-top: 50px">
+  <div class="box">
+    <div class="container-4">
+      <input type="search" id="search" placeholder="Search..." value="<%= params[:search] %>"/>
+      <button class="icon"><i class="fa fa-search"></i></button>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <h1 class="text-center">
+    Search results for "<%= params[:search] %>" <small><%= @search_results.count %> found</small><br/>
+  </h1>
+</div>
+<div class="suggested-bar">
+  <% @adverts.each do |advert| %>
+      <div>
+        <h3><%= advert.title %></h3>
+
+        <p><img src="https://cdn4.iconfinder.com/data/icons/keynote-and-powerpoint-icons/256/Money-16.png"/>
+          <%= number_to_currency(advert.payment.blank? ? 0 : advert.payment, unit: 'R', separator: ',', delimiter: ' ') %>
+        </p>
+
+        <p>
+          <img src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-16.png"/> <%= advert.location %>
+        </p>
+
+        <p>
+          <img src="https://cdn1.iconfinder.com/data/icons/material-device/20/access-time-16.png"/> <%= time_ago_in_words(advert.date_expiry) %>
+          left</p>
+      </div>
+  <% end %>
+</div>
+<div class="container" style="position: absolute;
+    top: 179px;
+    left: 293px;">
+  <% if !@search_results.blank? %>
+      <% @search_results.each do |advert| %>
+          <%= render 'advert', :advert => advert %>
+      <% end %>
+  <% else %>
+      <h1 style="color: lightgray">No Results Found</h1>
+  <% end %>
+</div>
+<!--<div class="container"style="margin-top: 100px">-->
+
+<!--</div>-->
+<!--<div class="container" style="background-color: pink">-->
+<!--<div class="row">-->
+<!--<div class="col-lg-6">-->
+
+<!--</div>&lt;!&ndash; /col-lg-6 &ndash;&gt;-->
+<!--<div class="col-lg-6">-->
+<!--<img class="img-responsive" src="/assets/frontend/img/logo.png" alt="" style="height:350px">-->
+<!--</div>&lt;!&ndash; /col-lg-6 &ndash;&gt;-->
+
+<!--</div>&lt;!&ndash; /row &ndash;&gt;-->
+<!--</div>&lt;!&ndash; /container &ndash;&gt;-->
+
+<!--<div class="container">-->
+<!--<div class="col-md-12 advert-listing"></div>-->
+<!--</div>&lt;!&ndash; /container &ndash;&gt;-->
+
+
+
+

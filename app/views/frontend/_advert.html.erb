@@ -1,0 +1,24 @@
+<div class="panel panel-default" style="width:40%; display: inline-block">
+  <div class="col-md-12 text-right"><label class="label label-danger"><%= time_ago_in_words(advert.date_expiry) %>
+    left</label></div>
+  <div class="row">
+    <div class="col-md-2 text-center" style="vertical-align:central">
+      <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-48.png">
+    </div>
+    <div class="col-md-10">
+      <a href="#"><%= advert.title %></a><br>
+      <small>posted by - <a href="#"><%= advert.user.full_name %></a></small>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h3>
+        <strong><label class="label label-info col-lg-8 col-md-8 col-xs-12"><i class="fa fa-dollar"></i><%= number_to_currency(advert.payment.blank? ? 0 : advert.payment, unit: 'R', separator: ',', delimiter: ' ') %></label></strong>
+      </h3>
+
+      <h3>
+        <strong><a href="#" class="btn btn-success col-lg-4 col-md-4 col-xs-12"><i class="fa fa-eye" style="color:#268526"></i>Read
+          More</a></strong></h3>
+    </div>
+  </div>
+</div>

@@ -7,9 +7,9 @@
         </h1>
         <form class="form-inline" role="form">
           <div class="form-group">
-            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Search for a job">
+            <input class="form-control" id="search_field" placeholder="Search for a job">
           </div>
-          <button type="submit" class="btn btn-warning btn-lg">Find!</button> <br />
+          <a id="find_button" class="btn btn-warning btn-lg" href="/">Find!</a> <br />
           <br />
           <button type="submit" class="btn btn-warning btn-lg col-md-12">Browse Jobs</button> <br />
         </form>
@@ -198,5 +198,9 @@
     </div><!--/col-lg-4 -->
   </div><!-- /row -->
 </div><!-- /container -->
+
+<script>
+  search.initialize();
+</script>
 
 

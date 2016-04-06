@@ -1,4 +1,5 @@
 registration = {}
+search = {}
 
 registration.validation = function () {
     $(document).on('click','#submit_button', function () {
@@ -13,6 +14,13 @@ registration.validation = function () {
         } else {
             show_validation(validation_message)
         }
+    })
+}
+
+search.initialize = function () {
+    $(document).on('click', '#find_button', function(e) {
+        e.preventDefault();
+        window.location = $('#search_field').val();
     })
 }
 

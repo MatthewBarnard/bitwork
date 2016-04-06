@@ -18,25 +18,6 @@ Rails.application.routes.draw do
   resources :seeker_jobs
   resources :seeker_payments
 
-  controller :frontend do
-    # REGISTER
-    get '/register/seeker' => :register_job_seeker
-    get '/register/provider' => :register_job_provider
-    post '/register/seeker' => :save_register_job_seeker
-    patch '/register/seeker' => :save_register_job_seeker
-    post '/register/provider' => :save_register_job_provider
-    patch '/register/provider' => :save_register_job_provider
-
-
-    # GENERAL
-    post '/login' => :login
-    patch '/login' => :login
-    get '/logout' => :logout
-
-    get '/about_us' => :about_us
-
-  end
-
   # ADMINISTRATOR BACKEND
 
   controller :administrator_dashboard do
@@ -97,5 +78,25 @@ Rails.application.routes.draw do
 
   controller :seeker_payments do
     get '/seeker/payments' => :index
+  end
+
+  controller :frontend do
+    # REGISTER
+    get '/register/seeker' => :register_job_seeker
+    get '/register/provider' => :register_job_provider
+    post '/register/seeker' => :save_register_job_seeker
+    patch '/register/seeker' => :save_register_job_seeker
+    post '/register/provider' => :save_register_job_provider
+    patch '/register/provider' => :save_register_job_provider
+
+    # GENERAL
+    post '/login' => :login
+    patch '/login' => :login
+    get '/logout' => :logout
+
+    get '/about_us' => :about_us
+
+    # ADVERTS
+    get '/:search' => :search
   end
 end
