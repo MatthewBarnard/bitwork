@@ -75,7 +75,7 @@ class FrontendController < ApplicationController
   end
 
   def advert
-
+    @advert = Advert.find(params[:id])
   end
 
   # SEARCH
