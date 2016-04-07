@@ -8,26 +8,30 @@
 </div>
 <div class="container">
   <h1 class="text-center">
-    Search results for "<%= params[:search] %>" <small><%= @search_results.count %> found</small><br/>
+    Search results for "<%= params[:search] %>"
+    <small><%= @search_results.count %> found</small>
+    <br/>
   </h1>
 </div>
 <div class="suggested-bar">
   <% @adverts.each do |advert| %>
-      <div>
-        <h3><%= advert.title %></h3>
+      <a href="/advert/<%= advert.id %>">
+        <div>
+          <h3><%= advert.title %></h3>
 
-        <p><img src="https://cdn4.iconfinder.com/data/icons/keynote-and-powerpoint-icons/256/Money-16.png"/>
-          <%= number_to_currency(advert.payment.blank? ? 0 : advert.payment, unit: 'R', separator: ',', delimiter: ' ') %>
-        </p>
+          <p><img src="https://cdn4.iconfinder.com/data/icons/keynote-and-powerpoint-icons/256/Money-16.png"/>
+            <%= number_to_currency(advert.payment.blank? ? 0 : advert.payment, unit: 'R', separator: ',', delimiter: ' ') %>
+          </p>
 
-        <p>
-          <img src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-16.png"/> <%= advert.location %>
-        </p>
+          <p>
+            <img src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-16.png"/> <%= advert.location %>
+          </p>
 
-        <p>
-          <img src="https://cdn1.iconfinder.com/data/icons/material-device/20/access-time-16.png"/> <%= time_ago_in_words(advert.date_expiry) %>
-          left</p>
-      </div>
+          <p>
+            <img src="https://cdn1.iconfinder.com/data/icons/material-device/20/access-time-16.png"/> <%= time_ago_in_words(advert.date_expiry) %>
+            left</p>
+        </div>
+      </a>
   <% end %>
 </div>
 <div class="container" style="position: absolute;

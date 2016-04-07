@@ -20,12 +20,12 @@ registration.validation = function () {
 search.initialize = function () {
     $(document).on('click', '#find_button', function(e) {
         e.preventDefault();
-        window.location = $('#search_field').val();
+        window.location = '/search/' + $('#search_field').val();
     })
 
     $(document).on('click', '#results_search_button', function (e) {
         e.preventDefault();
-        window.location = $('#search').val();
+        window.location = '/search/' + $('#search').val();
     })
 }
 

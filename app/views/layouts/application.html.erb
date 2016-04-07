@@ -41,7 +41,7 @@
         <li><a href="/about_us">About Bit Work</a></li>
         <li><a href="/register/provider">Register as a Job Provider</a></li>
         <li><a href="/register/seeker">Register as a Job Seeker</a></li>
-        <li><a href="#">Browse Jobs</a></li>
+        <li><a href="/browse">Browse Jobs</a></li>
         <% if session[:user_id].blank? || !session[:user_id] %>
             <li><a href="#" data-toggle="modal" data-target="#modal_login">Login</a></li>
         <% else %>

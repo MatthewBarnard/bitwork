@@ -69,10 +69,23 @@ class FrontendController < ApplicationController
 
   end
 
+  # ADVERTS
+  def browse
+    @adverts = Advert.where(is_active: true)
+  end
+
+  def advert
+
+  end
+
+  # SEARCH
+
   def search
     @adverts = Advert.all
     @search_results = Advert.where("lower(title) LIKE '%#{params[:search].downcase}%'")
   end
+
+  # GENERAL
 
   def login
     verified_login = User.login(params[:login][:email], params[:login][:password])
@@ -100,8 +113,10 @@ class FrontendController < ApplicationController
     redirect_to action: 'index'
   end
 
+  # PARAMS
+
   def user_params
-    params.require(:user).permit(:full_name,:cellphone,:email,:password,:address)
+    params.require(:user).permit(:full_name, :cellphone, :email, :password, :address)
   end
 
 end

@@ -97,6 +97,9 @@ Rails.application.routes.draw do
     get '/about_us' => :about_us
 
     # ADVERTS
-    get '/:search' => :search
+    get '/browse' => :browse
+    get '/search/:search' => :search
+    get '/advert/:id' => :advert
+
   end
 end
