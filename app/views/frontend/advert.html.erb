@@ -18,19 +18,36 @@
   <div class="row">
     <div class="col-md-4 text-center">
       <h3>
-        <small><img style="margin-bottom: 8px;" src="https://cdn2.iconfinder.com/data/icons/bitsies/128/Crown-24.png" /> current leading bid - <a href="asd">John Partrage</a></small>
+        <% if @winning_bid.blank? %>
+            <small style="opacity:0.8">No Bids Yet
+            </small>
+        <% else %>
+            <small>
+              <img style="margin-bottom: 8px;" src="https://cdn2.iconfinder.com/data/icons/bitsies/128/Crown-24.png"/>
+              current leading bid - <a href="/user/<%= @winning_bid.user_id %>"><%= @winning_bid.user.full_name %></a>
+            </small>
+        <% end %>
       </h3>
     </div>
     <div class="col-md-4 text-center">
       <div style="background-color:#3498db; width:100%; height:74px; border-radius: 100px; display: block;">
-        <img style="    margin-top: 6px;" src="https://cdn1.iconfinder.com/data/icons/material-device/20/access-time-32.png" />
-        <br />
+        <img style="    margin-top: 6px;" src="https://cdn1.iconfinder.com/data/icons/material-device/20/access-time-32.png"/>
+        <br/>
+
         <h3 style="margin-top: 0px;color:white !important"><%= time_ago_in_words(@advert.date_expiry) %> left</h3>
       </div>
     </div>
     <div class="col-md-4 text-center">
       <h3>
-        <small><img src="https://cdn4.iconfinder.com/data/icons/keynote-and-powerpoint-icons/256/Money-24.png" /> current leading amount - R365.00</small>
+        <% if @winning_bid.blank? %>
+            <small style="opacity:0.8">No Bids Yet
+            </small>
+        <% else %>
+            <small><img src="https://cdn4.iconfinder.com/data/icons/keynote-and-powerpoint-icons/256/Money-24.png"/> current
+              leading amount - <%= number_to_currency(@winning_bid.amount, unit: 'R', separator: ',', delimiter: ' ') %>
+            </small>
+        <% end %>
+
       </h3>
     </div>
   </div>
@@ -38,7 +55,57 @@
   <div class="jumbotron">
     <p><%= @advert.description %></p>
   </div>
+
+  <hr/>
+  <div class="col-md-12 text-center">Bid History</div>
+  <hr/>
+  <br/>
+  <br/>
+
+  <div class="row">
+    <%= form_for @bid, url: {action: 'save_bid'}, :html => {id: 'bid_form'} do |f| %>
+        <div class="col-md-3">
+          <%= f.text_field :amount, id: 'bid_amount', required: 'required', class: 'form-control', style: 'width:100%', type: 'number', placeholder: 'Enter Bid Amount' %>
+        </div>
+        <div class="col-md-8">
+          <%= f.text_field :comment, id: 'comment', required: 'required', class: 'form-control', style: 'width:100%', type: 'text', placeholder: 'Comment - Be Assuring!' %>
+        </div>
+        <div class="col-md-1">
+          <button id="place_bid" type="submit" class="btn btn-success">
+            <i style="color:black; margin-right: 10px" class="fa fa-check"></i>Place Bid
+          </button>
+        </div>
+    <% end %>
+  </div>
+  <br/>
+  <% if @advert.bids.blank? %>
+      <h3 style="opacity: 0.6">No Bids Active. Be the first!</h3>
+  <% else %>
+      <% @advert.bids.order('amount ASC').each do |bid| %>
+          <%= render 'frontend/bid', :bid => bid, :show_accept => false %>
+      <% end %>
+  <% end %>
+
+  <!--<div class="col-md-6 text-center">-->
+  <!--<img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/star-20.png" /><a href="">John Partrage</a> - R 365.00 <br/>-->
+  <!--<a href="">John Newmark</a> - R 1 200.00 <br/>-->
+  <!--<a href="">Peter Dinklage</a> - R 1 300.00 <br/>-->
+  <!--<a href="">Steven Smith</a> - R 1 600.00 <br/>-->
+  <!--<a href="">Steven Smith</a> - R 2 600.00 <br/>-->
+  <!--<a href="">Steven Smith</a> - R 3 600.00 <br/>-->
+  <!--</div>-->
+  <!--<div class="col-md-5 text-center">-->
+  <!--<input class="form-control" style="width:100%" type="number" placeholder="Enter Bid" />-->
+  <!--</div>-->
+  <!--<div class="col-md-1 text-center">-->
+  <!--<button class="btn btn-success"><i style="color:black; margin-right: 10px" class="fa fa-check"></i>Place Bid</button>-->
+  <!--</div>-->
+
 </div>
+<br/>
+<br/>
+<br/>
+<br/>
 
 
 

@@ -1,0 +1,21 @@
+
+  <div class="row" style="background-color: white; -webkit-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+      -moz-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+      box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75); padding-top: 10px; padding-bottom: 10px">
+    <div class="col-md-6">
+      <div class="message">
+
+        <div class="user"><%= bid.user.full_name %>
+          <img src="<%= bid.user.seeker_rating_image %>" style="height: 40px;"/></div>
+        <div style="clear:both;"></div>
+        <div class="content"><%= bid.comment %></div>
+      </div>
+    </div>
+    <div class="col-md-6 text-right">
+      <h3 style="padding-right: 5px"><%= number_to_currency(bid.amount, unit: 'R', separator: ',', delimiter: ' ') %></h3>
+      <% if show_accept %>
+          <a href="#" class="btn btn-success"><i class="fa fa-check" style="padding-right: 5px"></i>Accept</a>
+      <% end %>
+    </div>
+  </div>
+  <br />

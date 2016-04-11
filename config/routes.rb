@@ -100,6 +100,7 @@ Rails.application.routes.draw do
     get '/browse' => :browse
     get '/search/:search' => :search
     get '/advert/:id' => :advert
-
+    post '/advert/:id' => :save_bid
+    patch '/advert/:id' => :save_bid
   end
 end

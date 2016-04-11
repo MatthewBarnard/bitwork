@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160404183240) do
+ActiveRecord::Schema.define(version: 20160411185745) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,16 @@ ActiveRecord::Schema.define(version: 20160404183240) do
     t.datetime "updated_at",          null: false
   end
 
+  create_table "bids", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "advert_id"
+    t.float    "amount"
+    t.boolean  "is_lead"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text     "comment"
+  end
+
   create_table "users", force: :cascade do |t|
     t.integer  "user_type"
     t.string   "email"
@@ -48,4 +58,6 @@ ActiveRecord::Schema.define(version: 20160404183240) do
 
   add_foreign_key "adverts", "users"
   add_foreign_key "adverts", "users", column: "user_claimed_id"
+  add_foreign_key "bids", "adverts"
+  add_foreign_key "bids", "users"
 end

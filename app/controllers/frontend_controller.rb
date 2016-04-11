@@ -76,6 +76,20 @@ class FrontendController < ApplicationController
 
   def advert
     @advert = Advert.find(params[:id])
+    @bid = Bid.new
+    @winning_bid = @advert.bids.where(is_lead: true).first rescue nil
+  end
+
+  def save_bid
+    current_bid = Bid.new
+    current_bid.user_id = session[:user_id]
+    current_bid.advert_id = params[:id]
+    current_bid.amount = params[:bid][:amount]
+    current_bid.comment = params[:bid][:comment]
+    current_bid.is_lead = current_bid.set_lead
+    current_bid.save
+
+    redirect_to :back
   end
 
   # SEARCH

@@ -11,4 +11,23 @@ class User < ActiveRecord::Base
       end
     end
   end
+
+  def seeker_rating_image
+    case self.rating
+      when 0..4 || self.rating.blank?
+        return '/assets/seeker_greenhorn.png'
+      when 5..9
+        return '/assets/seeker_onthegrind.png'
+      when 10..14
+        return '/assets/seeker_ladder.png'
+      when 15..19
+        return '/assets/seeker_hustler.png'
+      when 20..24
+        return '/assets/seeker_big_leagues.png'
+      when 25
+        return '/assets/seeker_legacy.png'
+      else
+        return '/assets/seeker_greenhorn.png'
+    end
+  end
 end
