@@ -60,6 +60,7 @@ Rails.application.routes.draw do
 
   controller :provider_bids do
     get '/provider/bids' => :index
+    get '/provider/bids/:id/accept' => :accept_bid
   end
 
   controller :provider_payments do
