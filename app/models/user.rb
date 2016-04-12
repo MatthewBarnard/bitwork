@@ -52,8 +52,12 @@ class User < ActiveRecord::Base
     end
   end
 
-  def seeker_update_rating
+  def provider_update_rating
     self.rating = self.adverts.count
+    self.save
+  end
+  def seeker_update_rating
+    self.rating = Advert.where(user_claimed_id: self.id).count
     self.save
   end
 end

@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d4b1780-6d0d-4bc7-ab69-a9f1745cdad2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/seeker_payments_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/seeker_payments_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/provider_adverts_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/provider_adverts_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/provider_bids_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/provider_bids_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/seeker_payments/index.html.erb" afterPath="$PROJECT_DIR$/app/views/seeker_payments/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
     </list>
     <ignored path="bitwork.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,17 +39,17 @@
         <entry file="file://$PROJECT_DIR$/app/controllers/seeker_payments_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="3" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/seeker_payments/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3482143">
-              <caret line="76" column="80" selection-start-line="76" selection-start-column="80" selection-end-line="76" selection-end-column="80" />
+            <state vertical-scroll-proportion="-0.8545455">
+              <caret line="98" column="21" selection-start-line="98" selection-start-column="21" selection-end-line="98" selection-end-column="21" />
               <folding>
                 <element signature="n#style#0;n#h1#1;n#div#0;n#div#0;n#section#0;n#section#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h1#0;n#div#1;n#div#0;n#section#0;n#section#0;n#!!top" expanded="true" />
@@ -83,6 +84,36 @@
                 <element signature="e#916#968#0" expanded="false" />
                 <element signature="e#1629#1676#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="provider_bids_controller.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/provider_bids_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.3478261">
+              <caret line="50" column="47" selection-start-line="50" selection-start-column="47" selection-end-line="50" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="provider_adverts_controller.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/provider_adverts_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -129,16 +160,13 @@
         <option value="$PROJECT_DIR$/app/views/frontend/advert.html.erb" />
         <option value="$PROJECT_DIR$/app/views/frontend/browse.html.erb" />
         <option value="$PROJECT_DIR$/db/migrate/20160411204219_add_accept_to_bids.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/provider_bids_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/provider_bids/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/frontend/_bid.html.erb" />
         <option value="$PROJECT_DIR$/db/migrate/20160412172305_add_has_paid_to_adverts.rb" />
         <option value="$PROJECT_DIR$/app/controllers/provider_payments_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/provider_payments/index.html.erb" />
         <option value="$PROJECT_DIR$/app/models/advert.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/provider_adverts_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/backend_job_seeker.html.erb" />
-        <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/app/views/provider_profile/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/seeker_profile/index.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/frontend_controller.rb" />
@@ -149,6 +177,9 @@
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/seeker_payments_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/seeker_payments/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/provider_adverts_controller.rb" />
+        <option value="$PROJECT_DIR$/app/models/user.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/provider_bids_controller.rb" />
       </list>
     </option>
   </component>
@@ -1042,14 +1073,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/provider_bids_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="55" selection-start-line="4" selection-start-column="55" selection-end-line="4" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/provider_bids/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1100,14 +1123,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/provider_adverts_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/backend_job_seeker.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.576923">
@@ -1136,14 +1151,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.0384614">
           <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11409396">
-          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
           <folding />
         </state>
       </provider>
@@ -1233,15 +1240,15 @@
     <entry file="file://$PROJECT_DIR$/app/controllers/seeker_payments_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="3" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/seeker_payments/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3482143">
-          <caret line="76" column="80" selection-start-line="76" selection-start-column="80" selection-end-line="76" selection-end-column="80" />
+        <state vertical-scroll-proportion="-0.8545455">
+          <caret line="98" column="21" selection-start-line="98" selection-start-column="21" selection-end-line="98" selection-end-column="21" />
           <folding>
             <element signature="n#style#0;n#h1#1;n#div#0;n#div#0;n#section#0;n#section#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h1#0;n#div#1;n#div#0;n#section#0;n#section#0;n#!!top" expanded="true" />
@@ -1249,6 +1256,30 @@
             <element signature="n#style#0;n#tr#0;n#tbody#0;n#table#0;n#section#0;n#section#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#i#0;n#a#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#section#0;n#section#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/provider_adverts_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/provider_bids_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3478261">
+          <caret line="50" column="47" selection-start-line="50" selection-start-column="47" selection-end-line="50" selection-end-column="47" />
+          <folding />
         </state>
       </provider>
     </entry>

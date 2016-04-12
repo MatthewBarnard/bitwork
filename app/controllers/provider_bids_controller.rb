@@ -15,6 +15,9 @@ class ProviderBidsController < ApplicationController
     current_bid.advert.user_claimed_amount = current_bid.amount
     current_bid.advert.save
 
+    current_user = User.find(current_bid.user_id)
+    current_user.seeker_update_rating
+
     redirect_to :back
   end
 end
