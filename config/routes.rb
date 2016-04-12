@@ -79,6 +79,7 @@ Rails.application.routes.draw do
 
   controller :seeker_payments do
     get '/seeker/payments' => :index
+    get '/seeker/payments/:id/mark_as_paid' => :mark_as_paid
   end
 
   controller :frontend do

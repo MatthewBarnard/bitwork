@@ -28,7 +28,8 @@
 
     <div class="row">
       <div class="col-md-6 text-center outstanding_panel">
-        <h1 style="margin: 0px">R 3 150.00</h1><br/>
+        <h1 style="margin: 0px"><%= number_to_currency(@jobs.where(is_paid: false).sum(:user_claimed_amount), unit: 'R', separator: ',', delimiter: ' ') %></h1>
+        <br/>
 
         <h1 style="margin: 0px">
           <small>(Immediately Due)</small>
@@ -50,9 +51,6 @@
       <thead>
       <tr>
         <th>
-          Ad #
-        </th>
-        <th>
           Title
         </th>
         <th>
@@ -68,27 +66,22 @@
       </thead>
       <tbody>
 
-      <tr>
-        <td>53321</td>
-        <td>Lawn mowing services needed</td>
-        <td><a href="#">Agnus Stirling</a></td>
-        <td>
-          <p>Claimed: R 450.00</p>
-        </td>
-        <td><a class="btn btn-success"><i class="fa fa-check" style="padding-right: 5px"></i>Mark as Paid</a></td>
-      </tr>
-
-      <tr>
-        <td>53288</td>
-        <td>Fun Software Testing Job</td>
-        <td><a href="#">Steven seagul</a></td>
-        <td>
-          <p>Claimed: R 900.00
-          </p>
-        </td>
-        <td><a class="btn btn-success"><i class="fa fa-check" style="padding-right: 5px"></i>Mark as Paid</a></td>
-      </tr>
-
+      <% @jobs.each do |job| %>
+          <tr style="<%= job.is_paid ? 'background-color: #C8FFB5' : '' %>">
+            <td><%= job.title %></td>
+            <td><a href="/user/<%= job.user_id %>"><%= job.user.full_name %></a></td>
+            <td>
+              <p>Claimed: <%= number_to_currency(job.user_claimed_amount, unit: 'R', separator: ',', delimiter: ' ') %></p>
+            </td>
+            <% if !job.is_paid %>
+                <td><a class="btn btn-success" href="/seeker/payments/<%= job.id %>/mark_as_paid"><i class="fa fa-check" style="padding-right: 5px"></i>Mark as Paid</a>
+                </td>
+            <% else %>
+                <td><label class="label label-success">Paid</label>
+                </td>
+            <% end %>
+          </tr>
+      <% end %>
 
       </tbody>
     </table>
