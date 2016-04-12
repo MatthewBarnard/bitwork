@@ -104,5 +104,8 @@ Rails.application.routes.draw do
     get '/advert/:id' => :advert
     post '/advert/:id' => :save_bid
     patch '/advert/:id' => :save_bid
+
+    # USERS
+    get '/user/:id' => :user
   end
 end

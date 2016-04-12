@@ -4,12 +4,11 @@
 
     <div class="row">
       <div class="col-md-6 text-left">
-        <h1><%= @user.full_name %></h1>
-        <p><%= @user.cellphone %></p>
-        <p><%= @user.address %> </p>
+        <h1><%= user.full_name %></h1>
+        <h2>Job Seeker</h2>
       </div>
       <div class="col-md-6 text-right">
-        <h1><img src="<%= @user.seeker_rating_image %>" /></h1>
+        <h1><img src="<%= user.seeker_rating_image %>" /></h1>
       </div>
     </div>
 
@@ -25,7 +24,7 @@
           <p><img src="https://cdn2.iconfinder.com/data/icons/bold-outline-mix/128/valentines_day-57-64.png"></p>
           <div class="row">
             <div class="col-md-12 text-center">
-              <h1><%= @jobs_taken %></h1>
+              <h1><%= Advert.where(user_claimed_id: user.id).count %></h1>
             </div>
           </div>
         </div>
@@ -41,7 +40,7 @@
           <p><img src="https://cdn2.iconfinder.com/data/icons/bold-outline-mix/128/inspiration-37-2-64.png"></p>
           <div class="row">
             <div class="col-md-12 text-center">
-              <h1><%= number_to_currency(@money_received, unit: 'R', separator: ',', delimiter: ' ') %></h1>
+              <h1><%= number_to_currency(Advert.where(user_claimed_id: user.id, is_paid: true).sum(:user_claimed_amount), unit: 'R', separator: ',', delimiter: ' ') %></h1>
             </div>
           </div>
         </div>
@@ -56,7 +55,7 @@
           <p><img src="https://cdn2.iconfinder.com/data/icons/bold-outline-mix/128/inspiration-32-64.png"></p>
           <div class="row">
             <div class="col-md-12 text-center">
-              <h1><%= @jobs_bid_on %></h1>
+              <h1><%= Bid.where(user_id: user.id).count %></h1>
             </div>
           </div>
         </div>
@@ -65,8 +64,10 @@
 
   </section>
 </section>
-<script>
-  $("#profile_menu_item").addClass('active')
-  $("#jobs_menu_item").removeClass('active')
-  $("#payments_menu_item").removeClass('active')
-</script>
+
+<style>
+  .white-panel{
+    background-color: white;
+    padding:10px;
+  }
+</style>

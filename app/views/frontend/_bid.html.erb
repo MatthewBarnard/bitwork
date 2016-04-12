@@ -4,7 +4,7 @@
   <div class="col-md-6">
     <div class="message">
 
-      <div class="user"><%= bid.user.full_name %>
+      <div class="user"><a href="/user/<%= bid.user.id %>"><%= bid.user.full_name %></a>
         <img src="<%= bid.user.seeker_rating_image %>" style="height: 40px;"/></div>
       <div style="clear:both;"></div>
       <div class="content"><%= bid.comment %></div>

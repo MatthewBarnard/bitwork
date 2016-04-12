@@ -1,0 +1,13 @@
+<div class="col-md-12 text-center" style="margin-top: 50px">
+
+</div>
+<div class="container">
+  <h1 class="text-center">
+    <% if @user.user_type == 2 %>
+        <%= render 'frontend/user_provider', :user => @user %>
+    <% else %>
+        <%= render 'frontend/user_seeker', :user => @user %>
+    <% end %>
+    <br/>
+  </h1>
+</div>

@@ -128,6 +128,12 @@ class FrontendController < ApplicationController
     redirect_to action: 'index'
   end
 
+  # USERS
+
+  def user
+    @user = User.find(params[:id])
+  end
+
   # PARAMS
 
   def user_params
