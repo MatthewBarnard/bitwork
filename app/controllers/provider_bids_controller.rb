@@ -1,8 +1,13 @@
 class ProviderBidsController < ApplicationController
   layout 'backend_job_provider'
+
   def index
     @user = User.find(session[:user_id])
-    @adverts = Advert.where(user_id: session[:user_id])
+    if @user.user_type != 2
+      redirect_to '/'
+    else
+      @adverts = Advert.where(user_id: session[:user_id])
+    end
   end
 
   def accept_bid

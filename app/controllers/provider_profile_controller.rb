@@ -5,14 +5,9 @@ class ProviderProfileController < ApplicationController
   def index
 
     @user = User.find(session[:user_id])
-    # if !session[:rerender_layout].blank?
-    #   session[:rerender_layout] = nil
-    #
-    #   # respond_to do |format|
-    #   #   format.js { render :js => "my_function();" }
-    #   # end
-    #   render :js => "location.reload();"
-    #
-    # end
+    if @user.user_type != 2
+      redirect_to '/'
+    else
+    end
   end
 end

@@ -3,7 +3,12 @@ class ProviderAdvertsController < ApplicationController
 
   def index
     @user = User.find(session[:user_id])
-    @adverts = Advert.where(user_id: session[:user_id])
+    if @user.user_type != 2
+      redirect_to '/'
+    else
+      @user = User.find(session[:user_id])
+      @adverts = Advert.where(user_id: session[:user_id])
+    end
   end
 
   def new
@@ -60,6 +65,6 @@ class ProviderAdvertsController < ApplicationController
   end
 
   def advert_params
-    params.require(:advert).permit(:id,:date_required,:date_expiry,:title,:payment,:description,:location)
+    params.require(:advert).permit(:id, :date_required, :date_expiry, :title, :payment, :description, :location)
   end
 end
