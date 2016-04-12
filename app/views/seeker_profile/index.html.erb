@@ -4,12 +4,12 @@
 
     <div class="row">
       <div class="col-md-6 text-left">
-        <h1>Nikon Simons</h1>
-        <p>082 379 3802</p>
-        <p>Langenhovenpark, Bloemfontein, 9301, South Africa </p>
+        <h1><%= @user.full_name %></h1>
+        <p><%= @user.cellphone %></p>
+        <p><%= @user.address %> </p>
       </div>
       <div class="col-md-6 text-right">
-        <h1><img src="/assets/seeker_onthegrind.png" /></h1>
+        <h1><img src="<%= @user.seeker_rating_image %>" /></h1>
       </div>
     </div>
 
@@ -25,7 +25,7 @@
           <p><img src="https://cdn2.iconfinder.com/data/icons/bold-outline-mix/128/valentines_day-57-64.png"></p>
           <div class="row">
             <div class="col-md-12 text-center">
-              <h1>9</h1>
+              <h1><%= @jobs_taken %></h1>
             </div>
           </div>
         </div>
@@ -41,7 +41,7 @@
           <p><img src="https://cdn2.iconfinder.com/data/icons/bold-outline-mix/128/inspiration-37-2-64.png"></p>
           <div class="row">
             <div class="col-md-12 text-center">
-              <h1>R 3200.00</h1>
+              <h1><%= number_to_currency(@money_received, unit: 'R', separator: ',', delimiter: ' ') %></h1>
             </div>
           </div>
         </div>
@@ -51,12 +51,12 @@
         <!-- WHITE PANEL - TOP USER -->
         <div class="white-panel pn">
           <div class="white-header">
-            <h5>JOBS BID ON</h5>
+            <h5>BIDS MADE</h5>
           </div>
           <p><img src="https://cdn2.iconfinder.com/data/icons/bold-outline-mix/128/inspiration-32-64.png"></p>
           <div class="row">
             <div class="col-md-12 text-center">
-              <h1>23</h1>
+              <h1><%= @jobs_bid_on %></h1>
             </div>
           </div>
         </div>

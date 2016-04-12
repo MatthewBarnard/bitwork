@@ -26,10 +26,29 @@ class User < ActiveRecord::Base
         return '/assets/seeker_hustler.png'
       when 20..24
         return '/assets/seeker_big_leagues.png'
-      when 25
+      when 25 || self.rating > 25
         return '/assets/seeker_legacy.png'
       else
         return '/assets/seeker_greenhorn.png'
+    end
+  end
+
+  def provider_rating_image
+    case self.rating
+      when 0..4 || self.rating.blank?
+        return '/assets/provider_greenhorn.png'
+      when 5..9
+        return '/assets/provider_job_creator.png'
+      when 10..14
+        return '/assets/provider_big_boss.png'
+      when 15..19
+        return '/assets/provider_veteran.png'
+      when 20..24
+        return '/assets/provider_dream_maker.png'
+      when 25 || self.rating > 25
+        return '/assets/provider_legacy.png'
+      else
+        return '/assets/provider_greenhorn.png'
     end
   end
 

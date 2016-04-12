@@ -9,9 +9,6 @@
         <thead>
         <tr>
           <th>
-            Ad #
-          </th>
-          <th>
             Title
           </th>
           <th>
@@ -21,33 +18,38 @@
             Amount
           </th>
           <th>
+            Contact
+          </th>
+          <th>
             Status
           </th>
         </tr>
         </thead>
         <tbody>
+        <% @jobs.each do |job| %>
+            <tr>
+              <td><%= job.title %></td>
+              <td><%= job.description[0..50] %>...</td>
+              <td>
+                <p>Claimed: <%= number_to_currency(job.user_claimed_amount, unit: 'R', separator: ',', delimiter: ' ') %></p>
+              </td>
+              <td>
+                <p><%= job.user.full_name %></p>
+                <p><%= job.user.cellphone %></p>
+                <p><%= job.user.email %></p>
+              </td>
+              <% if job.date_required < Date.today && !job.is_paid %>
+                  <td><p style="color:red">PAYMENT PENDING</p></td>
+              <% elsif job.date_required < Date.today && job.is_paid %>
+                  <td><p style="color:green">COMPLETED(<small>paid</small>)</p></td>
+              <% elsif job.date_required > Date.today %>
+                  <td><p style="color:red">WORK PENDING<small>(<%= (job.is_paid ? 'paid' : 'not paid') %>)</small></p></td>
+              <% end %>
 
-        <tr>
-          <td>53321</td>
-          <td>Lawn mowing services needed</td>
-          <td>A large yard is in need to be cleaned! we need...</td>
-          <td>
-            <p>Claimed: R 450.00</p>
-          </td>
-          <td><p style="color:green">COMPLETED</p></td>
-        </tr>
 
-        <tr>
-          <td>53288</td>
-          <td>Fun Software Testing Job</td>
-          <td>Students are needed for a fun day at a software deve...</td>
-          <td>
-            <p>Claimed: R 900.00
-            </p>
-          </td>
-          <td><p style="color:green">COMPLETED</p></td>
-        </tr>
 
+            </tr>
+        <% end %>
 
         </tbody>
       </table>
