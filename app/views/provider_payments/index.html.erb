@@ -28,21 +28,22 @@
 
     <div class="row">
       <div class="col-md-4 text-center outstanding_panel">
-        <h1 style="margin: 0px">R 3 150.00</h1><br/>
+        <h1 style="margin: 0px"><%= number_to_currency(@immediately_due, unit: 'R', separator: ',', delimiter: ' ') %></h1>
+        <br/>
 
         <h1 style="margin: 0px">
           <small>(Immediately Due)</small>
         </h1>
       </div>
       <div class="col-md-4 text-center outstanding_panel btn-success">
-        <h1 style="margin: 0px">R 760.00</h1><br/>
+        <h1 style="margin: 0px"><%= number_to_currency(@saving, unit: 'R', separator: ',', delimiter: ' ') %></h1><br/>
 
         <h1 style="margin: 0px">
           <small>(Savings)</small>
         </h1>
       </div>
       <div class="col-md-4 text-center outstanding_panel btn-danger">
-        <h1 style="margin: 0px">R 0.00</h1><br/>
+        <h1 style="margin: 0px"><%= number_to_currency(@overdue, unit: 'R', separator: ',', delimiter: ' ') %></h1><br/>
 
         <h1 style="margin: 0px">
           <small>(OVERDUE)</small>
@@ -55,9 +56,6 @@
     <table id="example" class="table">
       <thead>
       <tr>
-        <th>
-          Ad #
-        </th>
         <th>
           Title
         </th>
@@ -76,31 +74,17 @@
       </tr>
       </thead>
       <tbody>
-
-      <tr>
-        <td>53321</td>
-        <td>Lawn mowing services needed</td>
-        <td>A large yard is in need to be cleaned! we need...</td>
-        <td><a href="#">John Newall</a></td>
-        <td>
-          <p>Claimed: R 450.00</p>
-        </td>
-        <td>R 450.00</td>
-      </tr>
-
-      <tr>
-        <td>53288</td>
-        <td>Fun Software Testing Job</td>
-        <td>Students are needed for a fun day at a software deve...</td>
-        <td><a href="#">Sipho Nele <br/> Sedge Noells <br/> Peter Partrage <br/></a></td>
-        <td>
-          <p>Claimed: R 900.00
-            <small>each</small>
-          </p>
-        </td>
-        <td>R 2 700.00</td>
-      </tr>
-
+      <% @adverts.each do |advert| %>
+          <tr>
+            <td><%= advert.title %></td>
+            <td><%= advert.description[0..50] %>...</td>
+            <td><a href="/user/<%= advert.user_claimed_id %>"><%= User.find(advert.user_claimed_id).full_name rescue 'N/A' %></a></td>
+            <td>
+              <p>Claimed: <%= number_to_currency(advert.user_claimed_amount, unit: 'R', separator: ',', delimiter: ' ') %></p>
+            </td>
+            <td><%= number_to_currency(advert.user_claimed_amount, unit: 'R', separator: ',', delimiter: ' ') %></td>
+          </tr>
+      <% end %>
 
       </tbody>
     </table>
