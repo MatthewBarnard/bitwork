@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
   def provider_rating_image
     case self.rating
       when 0..4 || self.rating.blank?
-        return '/assets/provider_greenhorn.png'
+        return '/assets/provider_green_horn.png'
       when 5..9
         return '/assets/provider_job_creator.png'
       when 10..14
@@ -48,7 +48,7 @@ class User < ActiveRecord::Base
       when 25 || self.rating > 25
         return '/assets/provider_legacy.png'
       else
-        return '/assets/provider_greenhorn.png'
+        return '/assets/provider_green_horn.png'
     end
   end
 

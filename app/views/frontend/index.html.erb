@@ -3,15 +3,16 @@
     <div class="row">
       <div class="col-lg-6">
         <h1>
-          Find a bit-sized job today.<br />
+          Find a bit-sized job today.<br/>
         </h1>
+
         <form class="form-inline" role="form">
           <div class="form-group">
             <input class="form-control" id="search_field" placeholder="Search for a job">
           </div>
-          <a id="find_button" class="btn btn-warning btn-lg" href="/">Find!</a> <br />
-          <br />
-          <a href="/browse" class="btn btn-warning btn-lg col-md-12">Browse Jobs</a> <br />
+          <a id="find_button" class="btn btn-warning btn-lg" href="/">Find!</a> <br/>
+          <br/>
+          <a href="/browse" class="btn btn-warning btn-lg col-md-12">Browse Jobs</a> <br/>
         </form>
       </div><!-- /col-lg-6 -->
       <div class="col-lg-6 text-center">
@@ -24,19 +25,22 @@
 <div class="row">
   <div class="col-md-4 col-xs-6 text-center panel panel-default">
     <div class="panel-body">
-      <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/map-64.png" /> <br />
+      <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/map-64.png"/> <br/>
+
       <h3>Browse Near you</h3>
     </div>
   </div>
   <div class="col-md-4 col-xs-6 text-center panel panel-default">
     <div class="panel-body">
-      <img src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-64.png" /> <br />
+      <img src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-64.png"/> <br/>
+
       <h3>Browse Ending Soon</h3>
     </div>
   </div>
   <div class="col-md-4 col-xs-12 text-center panel panel-default">
     <div class="panel-body">
-      <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/globe-64.png" /> <br />
+      <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/globe-64.png"/> <br/>
+
       <h3>Browse All Jobs</h3>
     </div>
   </div>
@@ -47,125 +51,38 @@
   <div class="row mt centered">
     <div class="col-lg-6 col-lg-offset-3">
       <h1>Recently added</h1>
+
       <h3>Jobs that our job providers have recently added</h3>
     </div>
   </div><!-- /row -->
 
+  <% @adverts.each do |advert| %>
+      <div class="col-md-6 panel panel-default">
+        <div class="col-md-12 text-right">
+          <label class="label label-danger"><%= time_ago_in_words(advert.date_expiry) %> left</label></div>
+        <div class="row">
+          <div class="col-md-2 text-center" style="vertical-align:central">
+            <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-48.png"/>
+          </div>
+          <div class="col-md-10">
+            <a href="#"><%= advert.title %></a><br/>
+            <small>posted by - <a href="/user/<%= advert.user_id %>"><%= advert.user.full_name %></a></small>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <h3>
+              <strong><label class="label label-info col-lg-8 col-md-8 col-xs-12"><i class="fa fa-dollar"></i><%= number_to_currency(advert.payment, unit: 'R', separator: ',', delimiter: ' ') %>
+              </label></strong>
+            </h3>
 
-  <div class="col-md-6 panel panel-default">
-    <div class="col-md-12 text-right"><label class="label label-danger">3 Days Left</label></div>
-    <div class="row">
-      <div class="col-md-2 text-center" style="vertical-align:central">
-        <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-48.png" />
+            <h3>
+              <strong><a href="/advert/<%= advert.id %>" class="btn btn-success col-lg-4 col-md-4 col-xs-12"><i class="fa fa-eye" style="color:#268526"></i>Read
+                More</a></strong></h3>
+          </div>
+        </div>
       </div>
-      <div class="col-md-10">
-        <a href="#">Light Gardening Needed</a><br />
-        <small>posted by - <a href="#">Johann Merr</a></small>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <h3><strong><label class="label label-info col-lg-8 col-md-8 col-xs-12"><i class="fa fa-dollar"></i>R 550.00</label></strong></h3>
-        <h3><strong><a href="#" class="btn btn-success col-lg-4 col-md-4 col-xs-12"><i class="fa fa-eye" style="color:#268526"></i>Read More</a></strong></h3>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-6 panel panel-default">
-    <div class="col-md-12 text-right"><label class="label label-danger">9 Days Left</label></div>
-    <div class="row">
-      <div class="col-md-2 text-center" style="vertical-align:central">
-        <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-48.png" />
-      </div>
-      <div class="col-md-10">
-        <a href="#">3 waiters needed in cool bar!</a><br />
-        <small>posted by - <a href="#">Jaquiline Smith</a></small>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <h3><strong><label class="label label-info col-lg-8 col-md-8 col-xs-12"><i class="fa fa-dollar"></i>R 380.00</label></strong></h3>
-        <h3><strong><a href="#" class="btn btn-success col-lg-4 col-md-4 col-xs-12"><i class="fa fa-eye" style="color:#268526"></i>Read More</a></strong></h3>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-6 panel panel-default">
-    <div class="col-md-12 text-right"><label class="label label-danger">15 Days Left</label></div>
-    <div class="row">
-      <div class="col-md-2 text-center" style="vertical-align:central">
-        <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-48.png" />
-      </div>
-      <div class="col-md-10">
-        <a href="#">Trustworthy house-sitter needed - 1 week</a><br />
-        <small>posted by - <a href="#">Many Maliq</a></small>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <h3><strong><label class="label label-info col-lg-8 col-md-8 col-xs-12"><i class="fa fa-dollar"></i>R 1 200.00</label></strong></h3>
-        <h3><strong><a href="#" class="btn btn-success col-lg-4 col-md-4 col-xs-12"><i class="fa fa-eye" style="color:#268526"></i>Read More</a></strong></h3>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-6 panel panel-default">
-    <div class="col-md-12 text-right"><label class="label label-danger">7 Days Left</label></div>
-    <div class="row">
-      <div class="col-md-2 text-center" style="vertical-align:central">
-        <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-48.png" />
-      </div>
-      <div class="col-md-10">
-        <a href="#">Pet walkers need in preller day care</a><br />
-        <small>posted by - <a href="#">Sam Amith</a></small>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <h3><strong><label class="label label-info col-lg-8 col-md-8 col-xs-12"><i class="fa fa-dollar"></i>R 250.00</label></strong></h3>
-        <h3><strong><a href="#" class="btn btn-success col-lg-4 col-md-4 col-xs-12"><i class="fa fa-eye" style="color:#268526"></i>Read More</a></strong></h3>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-6 panel panel-default">
-    <div class="col-md-12 text-right"><label class="label label-danger">1 Day Left</label></div>
-    <div class="row">
-      <div class="col-md-2 text-center" style="vertical-align:central">
-        <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-48.png" />
-      </div>
-      <div class="col-md-10">
-        <a href="#">Good Bartender needed for event</a><br />
-        <small>posted by - <a href="#">Slamma Njiko</a></small>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <h3><strong><label class="label label-info col-lg-8 col-md-8 col-xs-12"><i class="fa fa-dollar"></i>R 650.00 + Tips</label></strong></h3>
-        <h3><strong><a href="#" class="btn btn-success col-lg-4 col-md-4 col-xs-12"><i class="fa fa-eye" style="color:#268526"></i>Read More</a></strong></h3>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-6 panel panel-default">
-    <div class="col-md-12 text-right"><label class="label label-danger">24 Days Left</label></div>
-    <div class="row">
-      <div class="col-md-2 text-center" style="vertical-align:central">
-        <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-48.png" />
-      </div>
-      <div class="col-md-10">
-        <a href="#">Spring Cleaning Assistant</a><br />
-        <small>posted by - <a href="#">Marki Sill</a></small>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <h3><strong><label class="label label-info col-lg-8 col-md-8 col-xs-12"><i class="fa fa-dollar"></i>R 120.00</label></strong></h3>
-        <h3><strong><a href="#" class="btn btn-success col-lg-4 col-md-4 col-xs-12"><i class="fa fa-eye" style="color:#268526"></i>Read More</a></strong></h3>
-      </div>
-    </div>
-  </div>
-
-
+  <% end %>
 </div><!-- /container -->
 
 
@@ -173,29 +90,24 @@
   <div class="row mt centered">
     <div class="col-lg-6 col-lg-offset-3">
       <h1>Our Best Job Providers.</h1>
-      <h3>We pride ourselves in the vast spectrum of jobs posted here - here are the people that are the hiring heavy weights!</h3>
+
+      <h3>We pride ourselves in the vast spectrum of jobs posted here - here are the people that are the hiring heavy
+        weights!</h3>
     </div>
   </div><!-- /row -->
 
+
   <div class="row mt centered">
-    <div class="col-lg-4">
-      <img class="img-circle" src="/assets/frontend/img/pic1.jpg" width="140" alt="">
-      <h4><a href="#">Michael Robson</a></h4>
-      <p style="margin:0px">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.</p>
-      <p style="margin:0px"><a href="#"><i class="fa fa-user"></i></a><a href="#"><i class="fa fa-certificate"></i></a></p>
-    </div><!--/col-lg-4 -->
-    <div class="col-lg-4">
-      <img class="img-circle" src="/assets/frontend/img/pic2.jpg" width="140" alt="">
-      <h4><a href="#">Pete Ford</a></h4>
-      <p style="margin:0px">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.</p>
-      <p style="margin:0px"><a href="#"><i class="fa fa-user"></i></a><a href="#"><i class="fa fa-certificate"></i></a></p>
-    </div><!--/col-lg-4 -->
-    <div class="col-lg-4">
-      <img class="img-circle" src="/assets/frontend/img/pic3.jpg" width="140" alt="">
-      <h4><a href="#"> angelica finning </a></h4>
-      <p style="margin:0px">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.</p>
-      <p style="margin:0px"><a href="#"><i class="fa fa-user"></i></a><a href="#"><i class="fa fa-certificate"></i></a></p>
-    </div><!--/col-lg-4 -->
+    <% @users.each do |user| %>
+        <div class="col-lg-4">
+          <img class="img-circle" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" width="140" alt="">
+          <h4><a href="/user/<%= user.id %>"><%= user.full_name %></a></h4>
+          <div class="col-md-12 text-center">
+            <img src="<%= user.provider_rating_image %>" style="height:100px"/>
+          </div>
+        </div><!--/col-lg-4 -->
+    <% end %>
+
   </div><!-- /row -->
 </div><!-- /container -->
 
