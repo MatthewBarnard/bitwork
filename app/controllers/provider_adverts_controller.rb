@@ -27,6 +27,8 @@ class ProviderAdvertsController < ApplicationController
         current_user = User.find(session[:user_id])
         current_user.jobs = Advert.where(is_active: true, user_id: session[:user_id]).count
         current_user.save
+
+        current_user.seeker_update_rating
       end
     else
       current_advert = Advert.find(advert_params[:id])

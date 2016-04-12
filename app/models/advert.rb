@@ -9,4 +9,8 @@ class Advert < ActiveRecord::Base
     prepared_to_pay = (Advert.where("user_id = #{user} AND  is_claimed = true").sum(:payment)).to_d
     return prepared_to_pay - self.total_due(user)
   end
+
+  def self.get_active
+    return Advert.where('date_expiry >= current_date AND (is_active = true OR is_active IS NULL) AND (is_claimed = false OR is_claimed IS NULL)')
+  end
 end

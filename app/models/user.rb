@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :adverts
+
   def self.login(email, password)
     current_user = self.find_by_email(email) rescue nil
     if current_user.blank?
@@ -29,5 +31,10 @@ class User < ActiveRecord::Base
       else
         return '/assets/seeker_greenhorn.png'
     end
+  end
+
+  def seeker_update_rating
+    self.rating = self.adverts.count
+    self.save
   end
 end

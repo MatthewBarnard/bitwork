@@ -71,7 +71,7 @@ class FrontendController < ApplicationController
 
   # ADVERTS
   def browse
-    @adverts = Advert.where(is_active: true)
+    @adverts = Advert.get_active
   end
 
   def advert
@@ -95,8 +95,8 @@ class FrontendController < ApplicationController
   # SEARCH
 
   def search
-    @adverts = Advert.all
-    @search_results = Advert.where("lower(title) LIKE '%#{params[:search].downcase}%'")
+    @adverts = Advert.get_active
+    @search_results = Advert.where("lower(title) LIKE '%#{params[:search].downcase}%' AND date_expiry >= current_date AND (is_active = true OR is_active IS NULL) AND (is_claimed = false OR is_claimed IS NULL)")
   end
 
   # GENERAL
