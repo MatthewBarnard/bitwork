@@ -2,6 +2,9 @@ class FrontendController < ApplicationController
   def index
     @adverts = Advert.get_active.order('created_at ASC').limit(6)
     @users = User.all.order('rating ASC').limit(3)
+
+    new_hit = Hit.new
+    new_hit.save
   end
 
   # ------------------------------------------------------------ #
