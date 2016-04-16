@@ -1,5 +1,16 @@
 registration = {}
 search = {}
+login = {}
+
+login.initialize = function () {
+    $(document).on('click','#login_button', function () {
+        if ($('#keep_me_logged_in').is(":checked")) {
+            localStorage.setItem("stay_logged_in", "true");
+        } else {
+            localStorage.setItem("stay_logged_in", "false");
+        }
+    })
+}
 
 registration.validation = function () {
     $(document).on('click','#submit_button', function () {

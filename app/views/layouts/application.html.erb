@@ -77,11 +77,11 @@
 
               <label class="checkbox">
 		                <span class="pull-right">
-		                    <a href=""> Forgot Password?</a>
+                      <input id="keep_me_logged_in" type="checkbox" /> Keep me logged in
 		                </span>
               </label>
 
-              <button class="btn btn-theme btn-block" type="submit" form="login_form"><i class="fa fa-lock"></i> SIGN IN
+              <button id="login_button" class="btn btn-theme btn-block" type="submit" form="login_form"><i class="fa fa-lock"></i> SIGN IN
               </button>
               <hr>
 
@@ -156,6 +156,9 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="/assets/frontend/js/bootstrap.min.js"></script>
+<script>
+  login.initialize();
+</script>
 
 
 </body>
