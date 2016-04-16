@@ -62,7 +62,7 @@
           <label class="label label-danger"><%= time_ago_in_words(advert.date_expiry) %> left</label></div>
         <div class="row">
           <div class="col-md-2 text-center" style="vertical-align:central">
-            <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-48.png"/>
+            <img class="profile-picture" src="/images/profile_pictures/<%= advert.user.profile_picture %>"/>
           </div>
           <div class="col-md-10">
             <a style="font-size: 19px;" href="/advert/<%= advert.id %>"><%= advert.title %></a><br/>
@@ -100,7 +100,7 @@
   <div class="row mt centered">
     <% @users.each do |user| %>
         <div class="col-lg-4">
-          <img class="img-circle" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" width="140" alt="">
+          <img class="img-circle" src="/images/profile_pictures/<%= user.profile_picture %>" width="140" alt="">
           <h4><a href="/user/<%= user.id %>"><%= user.full_name %></a></h4>
           <div class="col-md-12 text-center">
             <!--USER IMAGE COMES HERE-->

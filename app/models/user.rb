@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :adverts
+  attr_accessor :file
 
   def self.login(email, password)
     current_user = self.find_by_email(email) rescue nil

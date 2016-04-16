@@ -38,6 +38,18 @@ class FrontendController < ApplicationController
       end
     end
 
+    # UPLOAD PROFILE PICTURE
+    if !user_params[:file].blank?
+      saved_as = Time.now.to_i.to_s + File.extname(user_params[:file].original_filename)
+      directory = "public/images/profile_pictures"
+      path = File.join(directory, saved_as)
+      File.open(path, "wb") { |f| f.write(user_params[:file].read) }
+
+      user.profile_picture = saved_as
+      user.save
+    end
+    # / UPLOAD PROFILE PICTURE
+
     redirect_to action: 'index'
   end
 
@@ -62,6 +74,18 @@ class FrontendController < ApplicationController
         session[:account_link] = 'seeker/profile'
       end
     end
+
+    # UPLOAD PROFILE PICTURE
+    if !user_params[:file].blank?
+      saved_as = Time.now.to_i.to_s + File.extname(user_params[:file].original_filename)
+      directory = "public/images/profile_pictures"
+      path = File.join(directory, saved_as)
+      File.open(path, "wb") { |f| f.write(user_params[:file].read) }
+
+      user.profile_picture = saved_as
+      user.save
+    end
+    # / UPLOAD PROFILE PICTURE
 
     redirect_to action: 'index'
   end
@@ -137,7 +161,7 @@ class FrontendController < ApplicationController
   # PARAMS
 
   def user_params
-    params.require(:user).permit(:full_name, :cellphone, :email, :password, :address)
+    params.require(:user).permit(:full_name, :cellphone, :email, :password, :address, :file)
   end
 
 end
