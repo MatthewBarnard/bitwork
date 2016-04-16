@@ -48,3 +48,9 @@
     top:100px;
     right:10px;
 }
+
+@media only screen and (max-width: 765px)  {
+    .home-logo {
+        margin: 0 auto !important;
+    }
+}
