@@ -4722,6 +4722,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-default .navbar-nav > li > a {
   color: #777777;
+  font-size: 18px;
 }
 
 .navbar-default .navbar-nav > li > a:hover,
