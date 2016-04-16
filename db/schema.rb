@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160416231722) do
+ActiveRecord::Schema.define(version: 20160416233845) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 20160416231722) do
     t.string   "jobs"
     t.float    "money"
     t.text     "profile_picture", default: "default.png"
+    t.boolean  "is_active",       default: true
   end
 
   add_foreign_key "adverts", "users"

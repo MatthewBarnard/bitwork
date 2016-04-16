@@ -8,7 +8,11 @@ class User < ActiveRecord::Base
       return false
     else
       if current_user.password == password
-        return current_user.id
+        if current_user.is_active.blank? || current_user.is_active
+          return current_user.id
+        else
+          return false
+        end
       else
         return false
       end

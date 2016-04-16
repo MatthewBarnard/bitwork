@@ -26,6 +26,8 @@ Rails.application.routes.draw do
 
   controller :administrator_users do
     get '/administrator/users' => :index
+    get '/administrator/users/:id/disable' => :disable
+    get '/administrator/users/:id/activate' => :activate
   end
 
   controller :administrator_adverts do

@@ -1,6 +1,7 @@
 <section id="main-content">
   <section class="wrapper">
-    <br />
+    <br/>
+
     <div class="showback">
       <h4><i class="fa fa-angle-right"></i> Users</h4>
       <table id="example" class="table">
@@ -28,44 +29,27 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <td>Sammy Smith</td>
-          <td>Job Provider</td>
-          <td>21</td>
-          <td><a href="#">sammy101@gmail.com</a></td>
-          <td>Jun 2015</td>
-          <td><a href="#" class="btn btn-danger"><i class="fa fa-trash" style="padding-right: 5px"></i>Remove User</a>
-          </td>
-        </tr>
+        <% @users.each do |user| %>
+            <tr <%= user.is_active ? '' : 'style="background-color: #FFD6D6"'.html_safe %>>
+              <td><%= user.full_name %></td>
+              <td><%= user.user_type == 2 ? 'Job Provider' : 'Job Seeker' %></td>
+              <td><%= user.user_type == 2 ? user.adverts.count.to_s + ' created' : Advert.where(user_claimed_id: user.id, is_claimed: true).count.to_s + ' claimed' %></td>
+              <td><a href="mailto:<%= user.email %>"><%= user.email %></a></td>
+              <td><%= time_ago_in_words(user.created_at) %> ago</td>
+              <% if user.is_active %>
+                  <td>
+                    <a href="/administrator/users/<%= user.id %>/disable" class="btn btn-danger"><i class="fa fa-trash" style="padding-right: 5px"></i>Remove
+                      User</a>
+                  </td>
+              <% else %>
+                  <td>
+                    <a href="/administrator/users/<%= user.id %>/activate" class="btn btn-success"><i class="fa fa-check" style="padding-right: 5px"></i>Re-Activate User</a>
+                  </td>
+              <% end %>
+            </tr>
+        <% end %>
 
-        <tr style="background-color: #FFD6D6">
-          <td>Peter Dinklage</td>
-          <td>Job Seeker</td>
-          <td>2</td>
-          <td><a href="#">petepart22@gmail.com</a></td>
-          <td>Jan 2016</td>
-          <td><a href="#" class="btn btn-success"><i class="fa fa-check" style="padding-right: 5px"></i>Re-Activate User</a>
-          </td>
-        </tr>
-        <tr>
-          <td>John Siker</td>
-          <td>Job Seeker</td>
-          <td>0</td>
-          <td><a href="#">johnnyhon@gmail.com</a></td>
-          <td>Jan 2016</td>
-          <td><a href="#" class="btn btn-danger"><i class="fa fa-trash" style="padding-right: 5px"></i>Remove User</a>
-          </td>
-        </tr>
 
-        <tr>
-          <td>Noles Petes</td>
-          <td>Job Seeker</td>
-          <td>0</td>
-          <td><a href="#">pitiiii@gmail.com</a></td>
-          <td>Jan 2016</td>
-          <td><a href="#" class="btn btn-danger"><i class="fa fa-trash" style="padding-right: 5px"></i>Remove User</a>
-          </td>
-        </tr>
 
         </tbody>
       </table>
@@ -75,18 +59,18 @@
 </section>
 <script>
   $(document).ready(function () {
-    $('#example').DataTable( {
-      columnDefs: [ {
-        targets: [ 0 ],
-        orderData: [ 0, 1 ]
+    $('#example').DataTable({
+      columnDefs: [{
+        targets: [0],
+        orderData: [0, 1]
       }, {
-        targets: [ 1 ],
-        orderData: [ 1, 0 ]
+        targets: [1],
+        orderData: [1, 0]
       }, {
-        targets: [ 4 ],
-        orderData: [ 4, 0 ]
-      } ]
-    } );
+        targets: [4],
+        orderData: [4, 0]
+      }]
+    });
   })
 
   $("#adverts_menu_item").removeClass('active')
