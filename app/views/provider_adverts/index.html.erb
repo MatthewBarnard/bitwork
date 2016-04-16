@@ -43,7 +43,7 @@
               <td class="text-center"><%= !advert.user_claimed_id.blank? ? '<a href="#">'.html_safe + User.find(advert.user_claimed_id).full_name + '</a>'.html_safe : 'N/A' %></td>
               <td>
                 <a href="/provider/adverts/<%= advert.id %>/edit" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
-                <a href="/provider/adverts/<%= advert.id %>/view" class="btn btn-primary"><i class="fa fa-eye"></i></a>
+                <a href="/advert/<%= advert.id %>" class="btn btn-primary"><i class="fa fa-eye"></i></a>
                 <% if advert.is_active %>
                     <a href="/provider/adverts/<%= advert.id %>/disable" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                 <% else %>
