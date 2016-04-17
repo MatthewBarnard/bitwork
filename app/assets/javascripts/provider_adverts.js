@@ -5,6 +5,7 @@ provider_adverts.init = function () {
         e.preventDefault();
 
         provider_adverts.loadmap($('#entered_address').val())
+        provider_adverts.loadmap($('#input_address').val())
         $('html, body').animate({
             scrollTop: $("#map").offset().top
         }, 500);
@@ -34,5 +35,6 @@ provider_adverts.loadmap = function (address) {
 
     function load_abs_address(address){
         $('#entered_address').val(address)
+        $('#input_address').val(address)
     }
 }

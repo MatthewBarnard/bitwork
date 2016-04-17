@@ -85,10 +85,11 @@
 
           <div class="form-group">
             <label for="InputMessage">Address</label>
-
+            <div id="map" style="height:250px; width:100%"></div>
             <div class="input-group">
-              <%= f.text_area :address, id: 'input_address', type: 'text', class: 'form-control', placeholder: 'Enter Email', required: 'true', readonly: 'true', validation_message: 'Your address is not allowed to be blank' %>
+              <%= f.text_area :address, id: 'input_address', type: 'text', class: 'form-control', placeholder: 'Enter Address', required: 'true', validation_message: 'Your address is not allowed to be blank' %>
               <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+              <a style="color:white" id="refresh_map" class="btn btn-primary"><i style="color:white" class="fa fa-refresh"></i></a>
             </div>
           </div>
           <button id="submit_button" class="btn btn-info pull-right">Submit</button>
@@ -114,6 +115,14 @@
 
 <!--GEOLOCATION-->
 <script>
+  $(document).off('click', '#refresh_map')
+  $(document).on('click', '#refresh_map', function (e) {
+    provider_adverts.loadmap($('#input_address').val())
+  })
+</script>
+
+<!--GEOLOCATION-->
+<script>
   function initMap() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function (position) {
@@ -127,6 +136,7 @@
   }
 
   function codeLatLng(lat, lng) {
+//    address = nil
     var geocoder = new google.maps.Geocoder();
     var latlng = new google.maps.LatLng(lat, lng);
     geocoder.geocode({
@@ -134,7 +144,9 @@
     }, function (results, status) {
       if (status === google.maps.GeocoderStatus.OK) {
         if (results[1]) {
-          $('#input_address').val(results[1].formatted_address)
+          provider_adverts.loadmap(results[1].formatted_address)
+//          address = results[1].formatted_address
+//          $('#input_address').val(results[1].formatted_address)
         } else {
           alert('No results found');
         }
@@ -148,7 +160,8 @@
         async defer>
 </script>
 
+
 <!--PAGE SCRIPT-->
 <script>
-  registration.validation();
+//  registration.validation();
 </script>
