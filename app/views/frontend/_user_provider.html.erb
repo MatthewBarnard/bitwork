@@ -5,6 +5,7 @@
     <div class="row">
       <div class="col-md-6 text-left">
         <h1><%= user.full_name %></h1>
+
         <h2>Job Provider</h2>
       </div>
       <div class="col-md-6 text-right">
@@ -14,7 +15,7 @@
       </div>
     </div>
 
-    <br />
+    <br/>
 
     <div class="row">
       <div class="col-md-4 mb">
@@ -24,6 +25,7 @@
             <h5>JOBS PROVIDED</h5>
           </div>
           <p><img src="https://cdn2.iconfinder.com/data/icons/bold-outline-mix/128/valentines_day-57-64.png"></p>
+
           <div class="row">
             <div class="col-md-12 text-center">
               <h1><%= user.jobs.blank? ? '0' : user.jobs %></h1>
@@ -40,6 +42,7 @@
             <h5>MONEY SPENT</h5>
           </div>
           <p><img src="https://cdn2.iconfinder.com/data/icons/bold-outline-mix/128/inspiration-37-2-64.png"></p>
+
           <div class="row">
             <div class="col-md-12 text-center">
               <h1><%= number_to_currency(Advert.where(user_id: user.id, is_claimed: true, is_paid: true).sum(:user_claimed_amount), unit: 'R', separator: ',', delimiter: ' ') %></h1>
@@ -55,6 +58,7 @@
             <h5>JOBS CURRENTLY ACTIVE</h5>
           </div>
           <p><img src="https://cdn2.iconfinder.com/data/icons/bold-outline-mix/128/inspiration-32-64.png"></p>
+
           <div class="row">
             <div class="col-md-12 text-center">
               <h1><%= Advert.where(user_id: session[:user_id], is_active: true, is_claimed: nil).count %></h1>
@@ -64,18 +68,32 @@
       </div><!-- /col-md-4 -->
 
 
-
-
-
     </div>
+    <br/>
+    <% if @ratings.count == 0 %>
+        <p>This user has no ratings</p>
+        <% end %>
+    <% @ratings.each do |rating| %>
+        <div class="row">
+          <div class="col-md-12">
+            <i class="fa fa-quote-left"></i> <%= rating.comment %> -
+            <a href="/user/<%= rating.rating_from %>"><%= User.find(rating.rating_from).full_name %></a><i class="fa fa-quote-right"></i>
+            <br/>
+            <% rating.rating.times do |index| %>
+                <i class="fa fa-star"></i>
+            <% end %>
+          </div>
+        </div>
+        <br/>
+    <% end %>
 
   </section>
 </section>
 
 <style>
-  .white-panel{
+  .white-panel {
     background-color: white;
-    padding:10px;
+    padding: 10px;
   }
 </style>
 

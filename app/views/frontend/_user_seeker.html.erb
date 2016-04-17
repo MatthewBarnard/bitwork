@@ -63,6 +63,24 @@
         </div>
       </div>
     </div>
+    <br />
+
+    <% if @ratings.count == 0 %>
+        <p>This user has no ratings</p>
+    <% end %>
+    <% @ratings.each do |rating| %>
+        <div class="row">
+          <div class="col-md-12">
+            <i class="fa fa-quote-left"></i> <%= rating.comment %> -
+            <a href="/user/<%= rating.rating_from %>"><%= User.find(rating.rating_from).full_name %></a><i class="fa fa-quote-right"></i>
+            <br/>
+            <% rating.rating.times do |index| %>
+                <i class="fa fa-star"></i>
+            <% end %>
+          </div>
+        </div>
+        <br/>
+    <% end %>
 
   </section>
 </section>

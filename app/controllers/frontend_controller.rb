@@ -176,6 +176,7 @@ class FrontendController < ApplicationController
 
   def user
     @user = User.find(params[:id])
+    @ratings = Rating.where(rating_to: params[:id])
   end
 
   # PARAMS

@@ -2,6 +2,24 @@
   <section class="wrapper">
     <br/>
 
+    <% @notifications.each do |advert| %>
+        <div class="alert-warning" style="padding: 10px; border-radius: 5px">
+          <div class="row">
+            <div class="col-md-10 text-left">
+              <p style="margin-bottom: 0px;margin-top: 8px;">
+                <i class="fa fa-exclamation" style="padding-right: 10px"></i> You have not rated
+                <a href="/user/<%= advert.user_id %>"><%= advert.user.full_name %></a> who
+                you have worked for</p>
+            </div>
+            <div class="col-md-2 text-right">
+              <a advert_id="<%= advert.id %>" user_from_id="<%= advert.user_claimed_id %>" user_to_id="<%= advert.user_id %>" class="btn btn-default post-rating" data-toggle="modal" data-target="#rating">Rate
+                now</a>
+            </div>
+          </div>
+        </div>
+        <br/>
+    <% end %>
+
     <div class="row">
       <div class="col-md-6 text-left">
         <h1><%= @user.full_name %></h1>
@@ -67,8 +85,76 @@
 
   </section>
 </section>
+
+<div id="rating" class="modal fade" role="dialog">
+  <%= form_for 'rating', url: {action: 'save_rating'}, :html => {class: 'form-horizontal style-form', id: 'rating_form'} do |f| %>
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Rating User</h4>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <input name="rating[user_from]" id="user_from" type="hidden"/>
+              <input name="rating[user_to]" id="user_to" type="hidden"/>
+              <input name="rating[advert_id]" id="advert_id" type="hidden"/>
+
+              <div class="col-md-12">
+                <input name="rating[star1]" id="star1" type="radio"/><i class="fa fa-star" style="padding-right: 5px"></i>
+                1 star <br/>
+                <input name="rating[star2]" id="star2" type="radio"/><i class="fa fa-star"></i><i class="fa fa-star" style="padding-right: 5px"></i>
+                2 stars <br/>
+                <input name="rating[star3]" id="star3" type="radio"/><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star" style="padding-right: 5px"></i>
+                3 stars <br/>
+                <input name="rating[star4]" id="star4" type="radio"/><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star" style="padding-right: 5px"></i>
+                4 stars <br/>
+                <input name="rating[star5]" id="star5" type="radio"/><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star" style="padding-right: 5px"></i>
+                5 star
+                <br/><br/>
+                <textarea name="rating[comment]" class="form-control" placeholder="Comment..." required="required"></textarea>
+              </div>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button id="submit_rating" type="submit" form="rating_form" class="btn btn-primary" data-dismiss="modal">Save
+              Rating
+            </button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+  <% end %>
+</div>
+
+
+
 <script>
   $("#profile_menu_item").addClass('active')
   $("#jobs_menu_item").removeClass('active')
   $("#payments_menu_item").removeClass('active')
+
+
+  $('#star1,#star2,#star3,#star4,#star5').click(function () {
+    $('#star1,#star2,#star3,#star4,#star5').prop('checked', false);
+    $(this).prop('checked', true);
+  })
+
+  $('#submit_rating').click(function () {
+    $('#rating_form').submit();
+  })
+
+  $('.post-rating').click(function () {
+    var user_from_id = $(this).attr('user_from_id')
+    var user_to_id = $(this).attr('user_to_id')
+    var advert_id = $(this).attr('advert_id')
+
+    $('#user_from').val(user_from_id)
+    $('#user_to').val(user_to_id)
+    $('#advert_id').val(advert_id)
+  })
 </script>

@@ -50,6 +50,8 @@ Rails.application.routes.draw do
 
   controller :provider_profile do
     get '/provider/profile' => :index
+    post '/provider/profile' => :save_rating
+    patch '/provider/profile' => :save_rating
   end
 
   controller :provider_adverts do
@@ -77,6 +79,8 @@ Rails.application.routes.draw do
 
   controller :seeker_profile do
     get '/seeker/profile' => :index
+    post '/provider/profile' => :save_rating
+    patch '/provider/profile' => :save_rating
   end
 
   controller :seeker_jobs do

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160417000912) do
+ActiveRecord::Schema.define(version: 20160417211539) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,9 +28,10 @@ ActiveRecord::Schema.define(version: 20160417000912) do
     t.float    "user_claimed_amount"
     t.datetime "date_expiry"
     t.datetime "date_required"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.boolean  "is_paid"
+    t.boolean  "has_rated",           default: false
   end
 
   create_table "bids", force: :cascade do |t|
@@ -49,6 +50,15 @@ ActiveRecord::Schema.define(version: 20160417000912) do
     t.boolean  "is_hit",     default: true
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+  end
+
+  create_table "ratings", force: :cascade do |t|
+    t.integer  "rating_from"
+    t.integer  "rating_to"
+    t.text     "comment"
+    t.integer  "rating"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -71,4 +81,6 @@ ActiveRecord::Schema.define(version: 20160417000912) do
   add_foreign_key "adverts", "users", column: "user_claimed_id"
   add_foreign_key "bids", "adverts"
   add_foreign_key "bids", "users"
+  add_foreign_key "ratings", "users", column: "rating_from"
+  add_foreign_key "ratings", "users", column: "rating_to"
 end
