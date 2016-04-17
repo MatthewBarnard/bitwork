@@ -32,6 +32,8 @@ Rails.application.routes.draw do
 
   controller :administrator_adverts do
     get '/administrator/adverts' => :index
+    get '/administrator/adverts/:id/disable' => :disable
+    get '/administrator/adverts/:id/activate' => :activate
   end
 
   controller :administrator_affiliate_marketing do

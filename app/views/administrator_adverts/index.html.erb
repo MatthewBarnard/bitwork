@@ -3,90 +3,55 @@
     <br/>
 
     <div class="showback">
-      <h4><i class="fa fa-angle-right"></i> Adverts Pending Approval</h4>
+      <h4><i class="fa fa-angle-right"></i> Adverts Active</h4>
       <br/>
 
-      <div class="row">
-        <div class="col-md-12 mb">
-          <div class="white-panel pn" style="color:white !important">
-            <div class="white-header">
-              <div class="row">
-                <div class="col-md-7 text-right">
-                  <h5>3 waiters needed in cool bar!</h5>
+      <% @advert.each do |advert| %>
+
+          <div class="row">
+            <div class="col-md-12 mb">
+              <div class="white-panel pn" style="color:white !important; <%= advert.is_active ? '' : 'background-color: #FFE8E8 !important'.html_safe %>">
+                <div class="white-header">
+                  <div class="row">
+                    <div class="col-md-7 text-right">
+                      <h5><%= advert.title %></h5>
+                    </div>
+                    <div class="col-md-5 text-right">
+                      <% if advert.is_active %>
+                          <a href="/administrator/adverts/<%= advert.id %>/disable" class="btn btn-danger" style="color:white"><i class="fa fa-times" style="padding-right: 10px"></i>Remove
+                            Advert</a>
+                      <% else %>
+                          <a href="/administrator/adverts/<%= advert.id %>/activate" class="btn btn-success" style="color:white"><i class="fa fa-check" style="padding-right: 10px"></i>Reactivate Advert</a>
+                      <% end %>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-md-5 text-right">
-                  <a href="#" class="btn btn-success" style="color:white"><i class="fa fa-check"></i></a>
-                  <a href="#" class="btn btn-danger" style="color:white"><i class="fa fa-times"></i></a>
+                <div class="row">
+                  <div class="col-md-4 text-center">
+                    <img src="/images/profile_pictures/<%= advert.user.profile_picture %>" class="img-circle" width="80">
+                  </div>
+                  <div class="col-md-4 text-center">
+                    <h3 style="background-color: #68dff0; padding: 5px"><b><%= advert.user.full_name %></b></h3></div>
+                  <div class="col-md-4 text-center" style="color: black">
+                    <h3><%= number_to_currency(advert.payment, unit: 'R', separator: ',', delimiter: ' ') %></h3>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4 text-center">
-                <img src="http://www7.carjunky.com/images/users/26383-user_icon.jpg" class="img-circle" width="80">
-              </div>
-              <div class="col-md-4 text-center">
-                <h3 style="background-color: #68dff0; padding: 5px"><b>Zac Snider</b></h3></div>
-              <div class="col-md-4 text-center" style="color: black">
-                <h3>R 380.00</h3>
-              </div>
-            </div>
 
-            <div class="row">
-              <div class="col-md-6 col-md-offset-3">
-                <p class="small mt">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                  Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                  galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-                  but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in
-                  the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
-                  desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <div class="row">
+                  <div class="col-md-6 col-md-offset-3">
+                    <p class="small mt">
+                      <%= advert.description[0..300] %>...
+                    </p>
+
+                  </div>
+                </div>
 
               </div>
             </div>
-
           </div>
-        </div>
-      </div>
+      <% end %>
 
       <br/>
-
-
-      <div class="row">
-        <div class="col-md-12 mb">
-          <div class="white-panel pn" style="color:white !important">
-            <div class="white-header">
-              <div class="row">
-                <div class="col-md-7 text-right">
-                  <h5>Need student to help pack old furniture</h5>
-                </div>
-                <div class="col-md-5 text-right">
-                  <a href="#" class="btn btn-success" style="color:white"><i class="fa fa-check"></i></a>
-                  <a href="#" class="btn btn-danger" style="color:white"><i class="fa fa-times"></i></a>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4 text-center">
-                <img src="https://www.law.yale.edu/sites/default/files/images/Alumni%20Student%20Profile%20photos/profiles_liss.jpg" class="img-circle" width="80">
-              </div>
-              <div class="col-md-4 text-center">
-                <h3 style="background-color: #68dff0; padding: 5px"><b>Rummulus Stargazerr</b></h3></div>
-              <div class="col-md-4 text-center" style="color: black">
-                <h3>R 1 200.00</h3>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-6 col-md-offset-3">
-                <p class="small mt">Sed tempor elementum mi. Maecenas nec arcu elementum, tempus ante non, rhoncus arcu.
-                  Donec feugiat facilisis magna nec ornare. Nunc lacinia tempor gravida. Morbi eleifend nibh ac dolor
-                  aliquet, ac sodales nunc luctus.</p>
-
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
 
 
     </div>
