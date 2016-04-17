@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160416233845) do
+ActiveRecord::Schema.define(version: 20160417000912) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,10 +38,11 @@ ActiveRecord::Schema.define(version: 20160416233845) do
     t.integer  "advert_id"
     t.float    "amount"
     t.boolean  "is_lead"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.text     "comment"
     t.boolean  "is_accepted"
+    t.boolean  "is_active",   default: true
   end
 
   create_table "hits", force: :cascade do |t|

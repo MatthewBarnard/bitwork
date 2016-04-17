@@ -6,7 +6,7 @@ class ProviderBidsController < ApplicationController
     if @user.user_type != 2
       redirect_to '/'
     else
-      @adverts = Advert.where(user_id: session[:user_id])
+      @adverts = Advert.where(user_id: session[:user_id], is_active: true)
     end
   end
 

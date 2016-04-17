@@ -42,6 +42,8 @@ Rails.application.routes.draw do
 
   controller :administrator_comments do
     get '/administrator/comments' => :index
+    get '/administrator/comments/:id/disable' => :disable
+    get '/administrator/comments/:id/activate' => :activate
   end
 
   # JOB PROVIDER BACKEND

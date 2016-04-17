@@ -81,7 +81,7 @@
   <% if @advert.bids.blank? %>
       <h3 style="opacity: 0.6">No Bids Active. Be the first!</h3>
   <% else %>
-      <% @advert.bids.order('amount ASC').each do |bid| %>
+      <% @advert.bids.where(is_active: true).order('amount ASC').each do |bid| %>
           <%= render 'frontend/bid', :bid => bid, :show_accept => false %>
       <% end %>
   <% end %>

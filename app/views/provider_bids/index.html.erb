@@ -40,7 +40,7 @@
         <br/>
         <% if advert.bids.where(is_accepted: true).blank? %>
             <% if !advert.bids.blank? %>
-                <% advert.bids.order('amount ASC').each do |bid| %>
+                <% advert.bids.where(is_active: true).order('amount ASC').each do |bid| %>
                     <div>
                       <%= render 'frontend/bid', :bid => bid, :show_accept => true %>
                     </div>

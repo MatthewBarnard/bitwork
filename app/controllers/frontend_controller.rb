@@ -105,7 +105,7 @@ class FrontendController < ApplicationController
   def advert
     @advert = Advert.find(params[:id])
     @bid = Bid.new
-    @winning_bid = @advert.bids.where(is_lead: true).first rescue nil
+    @winning_bid = @advert.bids.where(is_lead: true, is_active: true).first rescue nil
   end
 
   def save_bid
