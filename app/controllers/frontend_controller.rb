@@ -150,8 +150,25 @@ class FrontendController < ApplicationController
     redirect_to action: 'index'
   end
 
+  def admin_login
+
+  end
+
+  def perform_admin_login
+    if params[:admin][:password] == '10!B@e#H$a%N92'
+      session[:is_admin] = 'true'
+      redirect_to '/administrator/dashboard'
+    else
+      session[:is_admin] = nil
+      redirect_to '/admin/login'
+    end
+
+  end
+
   def logout
     session[:user_id] = nil
+    session[:is_admin] = nil
+
     redirect_to action: 'index'
   end
 

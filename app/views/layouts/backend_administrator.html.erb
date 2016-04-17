@@ -53,7 +53,7 @@
 
     <div class="top-menu">
       <ul class="nav pull-right top-menu">
-        <li><a class="logout" href="/logout">Logout</a></li>
+        <li><%= link_to 'Logout', '/logout', class: 'logout', "data-no-turbolink" => true %></li>
       </ul>
     </div>
   </header>

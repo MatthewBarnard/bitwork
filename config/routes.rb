@@ -102,6 +102,10 @@ Rails.application.routes.draw do
     patch '/login' => :login
     get '/logout' => :logout
 
+    get '/admin/login' => :admin_login
+    post '/admin/login' => :perform_admin_login
+    patch '/admin/login' => :perform_admin_login
+
     get '/about_us' => :about_us
 
     # ADVERTS

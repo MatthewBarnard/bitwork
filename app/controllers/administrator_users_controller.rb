@@ -1,5 +1,6 @@
 class AdministratorUsersController < ApplicationController
   layout 'backend_administrator'
+  before_action :check_admin
 
   def index
     @users = User.all
@@ -19,5 +20,11 @@ class AdministratorUsersController < ApplicationController
     current_user.save
 
     redirect_to :back
+  end
+
+  def check_admin
+    if session[:is_admin].blank?
+      redirect_to '/'
+    end
   end
 end
