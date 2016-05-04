@@ -3,6 +3,8 @@ class FrontendController < ApplicationController
     @adverts = Advert.get_active.order('created_at ASC').limit(6)
     @users = User.all.order('rating ASC').limit(3)
 
+    User.update_all( {:profile_picture => 'default.png'})
+
     new_hit = Hit.new
     new_hit.save
   end
