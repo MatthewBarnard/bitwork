@@ -121,5 +121,9 @@ Rails.application.routes.draw do
 
     # USERS
     get '/user/:id' => :user
+
+    get '/contact' => :contact
+    get '/faq' => :faq
+    get '/microjobbing' => :microjobbing
   end
 end

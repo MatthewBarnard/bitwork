@@ -19,7 +19,7 @@
   <link href='http://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.css">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.css">
 
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -40,7 +40,38 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/about_us">About Bit Work</a></li>
+
+
+
+
+
+        <!--<li><a href="/about_us">About Bit Work</a></li>-->
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Bit Work <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="/about_us">About Us</a>
+            </li>
+            <li>
+              <a href="/microjobbing">What is Microjobbing?</a>
+            </li>
+            <li>
+              <a href="/faq">FAQ</a>
+            </li>
+            <li>
+              <a href="/contact">Contact Us</a>
+            </li>
+          </ul>
+        </li>
+
+
+
+
+
+
+
+
         <% if session[:user_id].blank? || !session[:user_id] %>
             <li><a href="/register/provider">Register as a Job Provider</a></li>
             <li><a href="/register/seeker">Register as a Job Seeker</a></li>
