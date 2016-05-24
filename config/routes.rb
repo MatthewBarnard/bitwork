@@ -126,4 +126,10 @@ Rails.application.routes.draw do
     get '/faq' => :faq
     get '/microjobbing' => :microjobbing
   end
+
+  controller :user do
+    get '/update_user' => :update_user
+    post '/update_user' => :update_user
+    patch '/update_user' => :update_user
+  end
 end
