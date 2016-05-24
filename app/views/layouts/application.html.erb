@@ -31,11 +31,7 @@
 <div class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+
       <a class="navbar-brand" href="/"><b>Bitwork</b></a>
     </div>
     <div class="navbar-collapse collapse">
@@ -47,7 +43,7 @@
 
         <!--<li><a href="/about_us">About Bit Work</a></li>-->
 
-        <li class="dropdown">
+        <li id="drop_down_menu" class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Bit Work <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li>
@@ -191,6 +187,11 @@
 <script src="/assets/frontend/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.js"></script>
 
+<script>
+  $(document).on('page:change', function () {
+    $('.dropdown-toggle').dropdown();
+  })
+</script>
 
 
 <script>
