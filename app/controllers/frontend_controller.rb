@@ -187,6 +187,8 @@ class FrontendController < ApplicationController
   end
   def microjobbing
   end
+  def privacy_policy
+  end
 
 
   # PARAMS

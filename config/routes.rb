@@ -125,6 +125,8 @@ Rails.application.routes.draw do
     get '/contact' => :contact
     get '/faq' => :faq
     get '/microjobbing' => :microjobbing
+    get '/privacy_policy' => :privacy_policy
+    get '/terms_and_conditions' => :terms_and_conditions
   end
 
   controller :user do

@@ -23,27 +23,29 @@
   </div><!-- /container -->
 </div><!-- /headerwrap -->
 <div class="row">
-  <div class="col-md-4 col-xs-6 text-center panel panel-default">
+  <a href="/browse"><div class="col-md-4 col-xs-6 text-center panel panel-default">
     <div class="panel-body">
       <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/map-64.png"/> <br/>
 
       <h3>Browse Near you</h3>
     </div>
-  </div>
-  <div class="col-md-4 col-xs-6 text-center panel panel-default">
+  </div></a>
+
+  <a href="/browse"><div class="col-md-4 col-xs-6 text-center panel panel-default">
     <div class="panel-body">
       <img src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678120-calendar-clock-64.png"/> <br/>
 
       <h3>Browse Ending Soon</h3>
     </div>
-  </div>
-  <div class="col-md-4 col-xs-12 text-center panel panel-default">
+  </div></a>
+
+  <a href="/browse"><div class="col-md-4 col-xs-12 text-center panel panel-default">
     <div class="panel-body">
       <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/globe-64.png"/> <br/>
 
       <h3>Browse All Jobs</h3>
     </div>
-  </div>
+  </div></a>
 </div>
 
 
@@ -104,7 +106,7 @@
           <h4><a href="/user/<%= user.id %>"><%= user.full_name %></a></h4>
           <div class="col-md-12 text-center">
             <!--USER IMAGE COMES HERE-->
-            <!--<img src=" user.provider_rating_image " style="height:100px"/>-->
+            <img src="<%= user.provider_rating_image %>" style="height:100px"/>
             <!--USER IMAGE COMES HERE-->
           </div>
         </div><!--/col-lg-4 -->
